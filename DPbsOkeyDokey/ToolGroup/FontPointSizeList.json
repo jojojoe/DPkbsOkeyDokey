@@ -1,0 +1,24 @@
+[
+    {
+        "index": "1",
+        "title": "Small",
+        "pointSize": "80"
+    },
+    {
+        "index": "2",
+        "title": "Big1",
+        "pointSize": "100"
+    },
+    {
+        "index": "3",
+        "title": "Big2",
+        "pointSize": "150"
+    },
+    {
+        "index": "4",
+        "title": "Big3",
+        "pointSize": "180"
+    }
+    
+]
+

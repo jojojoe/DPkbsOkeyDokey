@@ -1,0 +1,6 @@
+framework module GDColorSlider {
+  umbrella header "GDColorSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

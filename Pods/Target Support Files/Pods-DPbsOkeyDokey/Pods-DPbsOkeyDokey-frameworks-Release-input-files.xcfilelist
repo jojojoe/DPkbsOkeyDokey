@@ -1,0 +1,26 @@
+${PODS_ROOT}/Target Support Files/Pods-DPbsOkeyDokey/Pods-DPbsOkeyDokey-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alertift/Alertift.framework
+${BUILT_PRODUCTS_DIR}/Alison/Alison.framework
+${BUILT_PRODUCTS_DIR}/AttributedString/AttributedString.framework
+${BUILT_PRODUCTS_DIR}/Comets/Comets.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework
+${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework
+${BUILT_PRODUCTS_DIR}/GDColorSlider/GDColorSlider.framework
+${BUILT_PRODUCTS_DIR}/GlitchLabel/GlitchLabel.framework
+${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework
+${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
+${BUILT_PRODUCTS_DIR}/Gradients/Gradients.framework
+${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework
+${BUILT_PRODUCTS_DIR}/Magnetic/Magnetic.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/Pulsator/Pulsator.framework
+${BUILT_PRODUCTS_DIR}/RainyRefreshControl/RainyRefreshControl.framework
+${BUILT_PRODUCTS_DIR}/ShimmerSwift/ShimmerSwift.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework
+${BUILT_PRODUCTS_DIR}/ZKProgressHUD/ZKProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

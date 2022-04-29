@@ -1,0 +1,7 @@
+DPbsOkeyDokey.xcodeproj/xcuserdata/
+DPbsOkeyDokey.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+DPbsOkeyDokey.xcodeproj/project.xcworkspace/xcuserdata/
