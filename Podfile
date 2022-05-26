@@ -23,7 +23,7 @@ target 'DPbsOkeyDokey' do
   pod 'ZKProgressHUD'
   pod 'Pulsator'
   
-  pod 'RainyRefreshControl'
+#  pod 'RainyRefreshControl'
   
   #objc
   

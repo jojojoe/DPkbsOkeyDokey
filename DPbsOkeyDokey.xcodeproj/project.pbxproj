@@ -11,6 +11,10 @@
 		EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00457828163D6700645EB1 /* SSLineWave.swift */; };
 		EB39136A280EBAC1007D77FE /* DPkbsHorScrollPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */; };
 		EB39136C280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39136B280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift */; };
+		EB3D0962283F7BE8001E1EB3 /* RainyEffecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D0961283F7BE8001E1EB3 /* RainyEffecView.swift */; };
+		EB3D0964283F7CAC001E1EB3 /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D0963283F7CAC001E1EB3 /* RainScene.swift */; };
+		EB3D0966283F7CCA001E1EB3 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = EB3D0965283F7CCA001E1EB3 /* rain.sks */; };
+		EB3D0968283F80B8001E1EB3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3D0967283F80B8001E1EB3 /* spark.png */; };
 		EB5C87092818EFB20063A432 /* SiriWaveLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C87072818EFB10063A432 /* SiriWaveLine.swift */; };
 		EB5C870A2818EFB20063A432 /* SiriWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C87082818EFB10063A432 /* SiriWaveView.swift */; };
 		EB5C870F2818F08F0063A432 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C870C2818F08E0063A432 /* Timeout.swift */; };
@@ -47,6 +51,10 @@
 		EB00457828163D6700645EB1 /* SSLineWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLineWave.swift; sourceTree = "<group>"; };
 		EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsHorScrollPreview.swift; sourceTree = "<group>"; };
 		EB39136B280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsHorScrollAdjustView.swift; sourceTree = "<group>"; };
+		EB3D0961283F7BE8001E1EB3 /* RainyEffecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainyEffecView.swift; sourceTree = "<group>"; };
+		EB3D0963283F7CAC001E1EB3 /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
+		EB3D0965283F7CCA001E1EB3 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
+		EB3D0967283F80B8001E1EB3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EB5C87072818EFB10063A432 /* SiriWaveLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriWaveLine.swift; sourceTree = "<group>"; };
 		EB5C87082818EFB10063A432 /* SiriWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriWaveView.swift; sourceTree = "<group>"; };
 		EB5C870C2818F08E0063A432 /* Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeout.swift; sourceTree = "<group>"; };
@@ -117,6 +125,17 @@
 			path = ViewsGroup;
 			sourceTree = "<group>";
 		};
+		EB3D0960283F7BCB001E1EB3 /* RainyEffecView */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D0961283F7BE8001E1EB3 /* RainyEffecView.swift */,
+				EB3D0963283F7CAC001E1EB3 /* RainScene.swift */,
+				EB3D0965283F7CCA001E1EB3 /* rain.sks */,
+				EB3D0967283F80B8001E1EB3 /* spark.png */,
+			);
+			path = RainyEffecView;
+			sourceTree = "<group>";
+		};
 		EB5C87062818EFA60063A432 /* SiriWave */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +164,7 @@
 				EBC5ED102815404F00F42093 /* SSBreathView.swift */,
 				EB00457828163D6700645EB1 /* SSLineWave.swift */,
 				EB9CB67E281A4675002F110A /* RippleEffectView.swift */,
+				EB3D0960283F7BCB001E1EB3 /* RainyEffecView */,
 				EB5C87062818EFA60063A432 /* SiriWave */,
 			);
 			path = StuffViews;
@@ -296,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC5ED082815293200F42093 /* FontPointSizeList.json in Resources */,
+				EB3D0968283F80B8001E1EB3 /* spark.png in Resources */,
+				EB3D0966283F7CCA001E1EB3 /* rain.sks in Resources */,
 				EBC5ED0C2815324C00F42093 /* SpeedList.json in Resources */,
 				EBD60237280D024E001CDF3B /* LaunchScreen.storyboard in Resources */,
 				EBD60234280D024E001CDF3B /* Assets.xcassets in Resources */,
@@ -358,6 +380,7 @@
 				EB986D9C280D5235008F3340 /* DPbsManager.swift in Sources */,
 				EBD60243280D1BDF001CDF3B /* DPkbsSettingVC.swift in Sources */,
 				EBD6022F280D024B001CDF3B /* ViewController.swift in Sources */,
+				EB3D0964283F7CAC001E1EB3 /* RainScene.swift in Sources */,
 				EBC5ED112815404F00F42093 /* SSBreathView.swift in Sources */,
 				EBD6022B280D024B001CDF3B /* AppDelegate.swift in Sources */,
 				EB986D9F280D571D008F3340 /* SSStarSpaceView.swift in Sources */,
@@ -368,6 +391,7 @@
 				EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */,
 				EBEF484C280FAD91004D368D /* DPkbsEffectView.swift in Sources */,
 				EBD60241280D04D6001CDF3B /* DPkbsMainVC.swift in Sources */,
+				EB3D0962283F7BE8001E1EB3 /* RainyEffecView.swift in Sources */,
 				EB986DA1280D6761008F3340 /* DPkbsPreviewVC.swift in Sources */,
 				EB986DA5280D6CAA008F3340 /* ASAutoScrollView.swift in Sources */,
 				EBD6022D280D024B001CDF3B /* SceneDelegate.swift in Sources */,

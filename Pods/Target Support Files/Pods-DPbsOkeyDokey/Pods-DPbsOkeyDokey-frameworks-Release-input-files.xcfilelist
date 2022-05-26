@@ -18,7 +18,6 @@ ${BUILT_PRODUCTS_DIR}/Magnetic/Magnetic.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
 ${BUILT_PRODUCTS_DIR}/Pulsator/Pulsator.framework
-${BUILT_PRODUCTS_DIR}/RainyRefreshControl/RainyRefreshControl.framework
 ${BUILT_PRODUCTS_DIR}/ShimmerSwift/ShimmerSwift.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework

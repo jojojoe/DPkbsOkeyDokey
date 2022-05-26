@@ -10,9 +10,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var mainVC: DPkbsMainVC = DPkbsMainVC()
+    var mainVC: DPkbsPreviewVC = DPkbsPreviewVC(styleItem: ODStyleItem(templateId: "", iapId: "", templateName: "", coverImg: "", coverColor: "", isPro: false))
 
     func initMainVC() {
+        if let styleItem = DPbsManager.default.styleList.first {
+            mainVC = DPkbsPreviewVC(styleItem: styleItem)
+        }
+        
         let nav = UINavigationController.init(rootViewController: mainVC)
         nav.isNavigationBarHidden = true
         window?.rootViewController = nav

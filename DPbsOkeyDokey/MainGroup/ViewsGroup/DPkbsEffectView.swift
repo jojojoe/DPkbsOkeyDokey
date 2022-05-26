@@ -24,7 +24,8 @@ class DPkbsEffectView: UIView, AVAudioPlayerDelegate {
     
     func setupContentView() {
         updateContentBgColor(color: .black)
-        addRipple2Effect()
+        addRainyEffect()
+//        addRipple2Effect()
 //        addRipple1Effect()
         
 //        addWaterPointWaveEffect()
@@ -53,6 +54,12 @@ extension DPkbsEffectView {
 }
 
 extension DPkbsEffectView {
+    
+    func addRainyEffect() {
+        let rainyEffectView = RainyEffecView(frame: CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height))
+        rainyEffectView.adhere(toSuperview: self)
+        rainyEffectView.didBeginRefresh()
+    }
     
     func addRipple2Effect() {
         let rippleEffectView = RippleEffectView()
