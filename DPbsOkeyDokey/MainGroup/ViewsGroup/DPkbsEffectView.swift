@@ -24,7 +24,7 @@ class DPkbsEffectView: UIView, AVAudioPlayerDelegate {
     
     func setupContentView() {
         updateContentBgColor(color: .black)
-        addRainyEffect()
+//        addRainyEffect()
 //        addRipple2Effect()
 //        addRipple1Effect()
         

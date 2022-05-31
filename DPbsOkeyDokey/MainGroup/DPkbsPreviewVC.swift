@@ -9,7 +9,7 @@ import UIKit
 
 class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
     var styleItem: ODStyleItem
-    let backBtn = UIButton()
+    let settingBtn = UIButton()
     let textBgV = UIView()
     var effectBgV: DPkbsEffectView!
     var toolView = UIView()
@@ -43,15 +43,15 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         
         //
         
-        backBtn.image(UIImage(named: ""))
+        settingBtn.image(UIImage(named: ""))
             .adhere(toSuperview: view)
             .backgroundColor(.darkGray)
-        backBtn.snp.makeConstraints {
+        settingBtn.snp.makeConstraints {
             $0.left.equalToSuperview().offset(24)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(4)
             $0.width.height.equalTo(48)
         }
-        backBtn.addTarget(self, action: #selector(backBtnClick(sender: )), for: .touchUpInside)
+        settingBtn.addTarget(self, action: #selector(settingBtnClick(sender: )), for: .touchUpInside)
         
         
     }
@@ -90,9 +90,8 @@ extension DPkbsPreviewVC {
 }
 
 extension DPkbsPreviewVC {
-    @objc func backBtnClick(sender: UIButton) {
-        self.navigationController?.hero.navigationAnimationType = .slide(direction: .down)
-        popVC()
+    @objc func settingBtnClick(sender: UIButton) {
+         
     }
 }
 
@@ -140,9 +139,8 @@ extension DPkbsPreviewVC {
             $0.bottom.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
         }
-        bottomBar.backgroundColor(UIColor.white.withAlphaComponent(0.3))
-        //
-        
+        bottomBar.backgroundColor(UIColor.white))
+         
         //
         bottomBar.addSubview(toolView)
         toolView.backgroundColor = UIColor(hexString: "#FAFAFA")
@@ -242,11 +240,11 @@ extension DPkbsPreviewVC {
         if sender.isSelected == true {
             sender.isSelected = false
             toolView.isHidden = false
-            backBtn.isHidden = false
+            settingBtn.isHidden = false
         } else {
             sender.isSelected = true
             toolView.isHidden = true
-            backBtn.isHidden = true
+            settingBtn.isHidden = true
         }
     }
     
@@ -258,6 +256,21 @@ extension DPkbsPreviewVC {
         
     }
     
+    @objc func textFontBtnClick(sender: UIButton) {
+        
+    }
+    
+    @objc func textColorBtnClick(sender: UIButton) {
+        
+    }
+    
+    @objc func bgEffectBtnClick(sender: UIButton) {
+        
+    }
+    
+    @objc func scrollStatusBtnClick(sender: UIButton) {
+        
+    }
     
 }
 
