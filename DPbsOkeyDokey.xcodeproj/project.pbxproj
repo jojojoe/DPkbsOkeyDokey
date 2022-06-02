@@ -20,6 +20,13 @@
 		EB5C870F2818F08F0063A432 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C870C2818F08E0063A432 /* Timeout.swift */; };
 		EB5C87102818F08F0063A432 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C870D2818F08E0063A432 /* Lerp.swift */; };
 		EB5C87112818F08F0063A432 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C870E2818F08E0063A432 /* DateExtension.swift */; };
+		EB985CF5284861F5004F3675 /* DPkbsFontBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB985CF4284861F5004F3675 /* DPkbsFontBar.swift */; };
+		EB985CF728486344004F3675 /* DPfont_zh.json in Resources */ = {isa = PBXBuildFile; fileRef = EB985CF628486344004F3675 /* DPfont_zh.json */; };
+		EB985CF92848636B004F3675 /* DPfont_en.json in Resources */ = {isa = PBXBuildFile; fileRef = EB985CF82848636B004F3675 /* DPfont_en.json */; };
+		EB985CFB28489767004F3675 /* DPfont_jp.json in Resources */ = {isa = PBXBuildFile; fileRef = EB985CFA28489767004F3675 /* DPfont_jp.json */; };
+		EB985CFD28489E95004F3675 /* DPkbsBgEffectBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB985CFC28489E95004F3675 /* DPkbsBgEffectBar.swift */; };
+		EB985CFF2848A449004F3675 /* StyleTemplateList_effect.json in Resources */ = {isa = PBXBuildFile; fileRef = EB985CFE2848A449004F3675 /* StyleTemplateList_effect.json */; };
+		EB985D012848B5B7004F3675 /* StyleTemplateList_photo.json in Resources */ = {isa = PBXBuildFile; fileRef = EB985D002848B5B7004F3675 /* StyleTemplateList_photo.json */; };
 		EB986D9C280D5235008F3340 /* DPbsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB986D9B280D5235008F3340 /* DPbsManager.swift */; };
 		EB986D9F280D571D008F3340 /* SSStarSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB986D9E280D571D008F3340 /* SSStarSpaceView.swift */; };
 		EB986DA1280D6761008F3340 /* DPkbsPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB986DA0280D6761008F3340 /* DPkbsPreviewVC.swift */; };
@@ -40,7 +47,7 @@
 		EBD60243280D1BDF001CDF3B /* DPkbsSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60242280D1BDF001CDF3B /* DPkbsSettingVC.swift */; };
 		EBD60245280D1BEB001CDF3B /* DPkbsStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */; };
 		EBD6024A280D3D48001CDF3B /* DPbsExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */; };
-		EBD6024C280D3EC6001CDF3B /* StyleTemplateList.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD6024B280D3EC6001CDF3B /* StyleTemplateList.json */; };
+		EBD6024C280D3EC6001CDF3B /* StyleTemplateList_color.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD6024B280D3EC6001CDF3B /* StyleTemplateList_color.json */; };
 		EBEF484C280FAD91004D368D /* DPkbsEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +67,13 @@
 		EB5C870C2818F08E0063A432 /* Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeout.swift; sourceTree = "<group>"; };
 		EB5C870D2818F08E0063A432 /* Lerp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
 		EB5C870E2818F08E0063A432 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		EB985CF4284861F5004F3675 /* DPkbsFontBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsFontBar.swift; sourceTree = "<group>"; };
+		EB985CF628486344004F3675 /* DPfont_zh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DPfont_zh.json; sourceTree = "<group>"; };
+		EB985CF82848636B004F3675 /* DPfont_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DPfont_en.json; sourceTree = "<group>"; };
+		EB985CFA28489767004F3675 /* DPfont_jp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DPfont_jp.json; sourceTree = "<group>"; };
+		EB985CFC28489E95004F3675 /* DPkbsBgEffectBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsBgEffectBar.swift; sourceTree = "<group>"; };
+		EB985CFE2848A449004F3675 /* StyleTemplateList_effect.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StyleTemplateList_effect.json; sourceTree = "<group>"; };
+		EB985D002848B5B7004F3675 /* StyleTemplateList_photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StyleTemplateList_photo.json; sourceTree = "<group>"; };
 		EB986D9B280D5235008F3340 /* DPbsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPbsManager.swift; sourceTree = "<group>"; };
 		EB986D9E280D571D008F3340 /* SSStarSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSStarSpaceView.swift; sourceTree = "<group>"; };
 		EB986DA0280D6761008F3340 /* DPkbsPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsPreviewVC.swift; sourceTree = "<group>"; };
@@ -82,7 +96,7 @@
 		EBD60242280D1BDF001CDF3B /* DPkbsSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsSettingVC.swift; sourceTree = "<group>"; };
 		EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsStoreVC.swift; sourceTree = "<group>"; };
 		EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPbsExtensionTool.swift; sourceTree = "<group>"; };
-		EBD6024B280D3EC6001CDF3B /* StyleTemplateList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StyleTemplateList.json; sourceTree = "<group>"; };
+		EBD6024B280D3EC6001CDF3B /* StyleTemplateList_color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StyleTemplateList_color.json; sourceTree = "<group>"; };
 		EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +234,7 @@
 			children = (
 				EBD6022A280D024B001CDF3B /* AppDelegate.swift */,
 				EBD6022C280D024B001CDF3B /* SceneDelegate.swift */,
+				EBD60240280D04D6001CDF3B /* DPkbsMainVC.swift */,
 				EBD6022E280D024B001CDF3B /* ViewController.swift */,
 				EBD60230280D024B001CDF3B /* Main.storyboard */,
 				EBD60233280D024E001CDF3B /* Assets.xcassets */,
@@ -232,10 +247,11 @@
 		EBD6023F280D04C5001CDF3B /* MainGroup */ = {
 			isa = PBXGroup;
 			children = (
-				EBD60240280D04D6001CDF3B /* DPkbsMainVC.swift */,
+				EB986DA0280D6761008F3340 /* DPkbsPreviewVC.swift */,
 				EBD60242280D1BDF001CDF3B /* DPkbsSettingVC.swift */,
 				EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */,
-				EB986DA0280D6761008F3340 /* DPkbsPreviewVC.swift */,
+				EB985CF4284861F5004F3675 /* DPkbsFontBar.swift */,
+				EB985CFC28489E95004F3675 /* DPkbsBgEffectBar.swift */,
 				EB391299280E635B007D77FE /* ViewsGroup */,
 			);
 			path = MainGroup;
@@ -247,10 +263,15 @@
 				EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */,
 				EB986D9B280D5235008F3340 /* DPbsManager.swift */,
 				EBC5ED0D2815356700F42093 /* ScreenBrightnessManager.swift */,
-				EBD6024B280D3EC6001CDF3B /* StyleTemplateList.json */,
+				EBD6024B280D3EC6001CDF3B /* StyleTemplateList_color.json */,
+				EB985CFE2848A449004F3675 /* StyleTemplateList_effect.json */,
+				EB985D002848B5B7004F3675 /* StyleTemplateList_photo.json */,
 				EBC5ED072815293200F42093 /* FontPointSizeList.json */,
 				EBC5ED0928152A5000F42093 /* FontColorList_TypeA.json */,
 				EBC5ED0B2815324C00F42093 /* SpeedList.json */,
+				EB985CF628486344004F3675 /* DPfont_zh.json */,
+				EB985CF82848636B004F3675 /* DPfont_en.json */,
+				EB985CFA28489767004F3675 /* DPfont_jp.json */,
 			);
 			path = ToolGroup;
 			sourceTree = "<group>";
@@ -317,13 +338,18 @@
 			files = (
 				EBC5ED082815293200F42093 /* FontPointSizeList.json in Resources */,
 				EB3D0968283F80B8001E1EB3 /* spark.png in Resources */,
+				EB985CFB28489767004F3675 /* DPfont_jp.json in Resources */,
+				EB985CF92848636B004F3675 /* DPfont_en.json in Resources */,
 				EB3D0966283F7CCA001E1EB3 /* rain.sks in Resources */,
 				EBC5ED0C2815324C00F42093 /* SpeedList.json in Resources */,
 				EBD60237280D024E001CDF3B /* LaunchScreen.storyboard in Resources */,
 				EBD60234280D024E001CDF3B /* Assets.xcassets in Resources */,
+				EB985CF728486344004F3675 /* DPfont_zh.json in Resources */,
 				EBD60232280D024B001CDF3B /* Main.storyboard in Resources */,
 				EBC5ED0A28152A5000F42093 /* FontColorList_TypeA.json in Resources */,
-				EBD6024C280D3EC6001CDF3B /* StyleTemplateList.json in Resources */,
+				EB985CFF2848A449004F3675 /* StyleTemplateList_effect.json in Resources */,
+				EB985D012848B5B7004F3675 /* StyleTemplateList_photo.json in Resources */,
+				EBD6024C280D3EC6001CDF3B /* StyleTemplateList_color.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +413,8 @@
 				EB5C870F2818F08F0063A432 /* Timeout.swift in Sources */,
 				EB5C870A2818EFB20063A432 /* SiriWaveView.swift in Sources */,
 				EBC5ED0E2815356700F42093 /* ScreenBrightnessManager.swift in Sources */,
+				EB985CF5284861F5004F3675 /* DPkbsFontBar.swift in Sources */,
+				EB985CFD28489E95004F3675 /* DPkbsBgEffectBar.swift in Sources */,
 				EB9CB67F281A4675002F110A /* RippleEffectView.swift in Sources */,
 				EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */,
 				EBEF484C280FAD91004D368D /* DPkbsEffectView.swift in Sources */,

@@ -1,4 +1,4 @@
-//
+let playScrollBtn = UIButton()//
 //  DPkbsPreviewVC.swift
 //  DPbsOkeyDokey
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
-    var styleItem: ODStyleItem
+    
     let settingBtn = UIButton()
     let textBgV = UIView()
     var effectBgV: DPkbsEffectView!
@@ -17,16 +17,14 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
     let sendBtn = UIButton()
     let lockBtn = UIButton()
     let flashBtn = UIButton()
-    let adjustBtn = UIButton()
+    let fontBtn = UIButton()
+    let bgEffectBtn = UIButton()
+    let bottomBar = UIView()
+    let playScrollBtn = UIButton()
+    let hideButton = UIButton()
+    let bottomMaskV = UIView()
+    var currentStyleItem: ODStyleItem?
     
-    init(styleItem: ODStyleItem) {
-        self.styleItem = styleItem
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +41,34 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         
         //
         
-        settingBtn.image(UIImage(named: ""))
+        settingBtn.image(UIImage(named: "i_setting"))
             .adhere(toSuperview: view)
-            .backgroundColor(.darkGray)
         settingBtn.snp.makeConstraints {
             $0.left.equalToSuperview().offset(24)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(4)
-            $0.width.height.equalTo(48)
+            $0.width.height.equalTo(44)
         }
         settingBtn.addTarget(self, action: #selector(settingBtnClick(sender: )), for: .touchUpInside)
         
+        //
+        lockBtn.addTarget(self, action: #selector(lockBtnClick(sender: )), for: .touchUpInside)
+        lockBtn.adhere(toSuperview: view)
+            .image(UIImage(named: "i_unlock_open"), .normal)
+            .image(UIImage(named: "i_unlock_lock"), .selected)
+        lockBtn.snp.makeConstraints {
+            $0.centerY.equalTo(settingBtn.snp.centerY)
+            $0.right.equalToSuperview().offset(-24)
+            $0.width.height.equalTo(44)
+        }
+        
+        //
+        
+        bottomMaskV.backgroundColor(UIColor.white.withAlphaComponent(0.2))
+            .adhere(toSuperview: view)
+        bottomMaskV.snp.makeConstraints {
+            $0.left.right.bottom.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
         
     }
     
@@ -71,7 +87,7 @@ extension DPkbsPreviewVC {
         DispatchQueue.main.async {
             [weak self] in
             guard let `self` = self else {return}
-            
+            self.updateToolBtnsShowStatus(isShow: false)
         }
         
         debugPrint(keyboardHeight)
@@ -83,15 +99,35 @@ extension DPkbsPreviewVC {
         DispatchQueue.main.async {
             [weak self] in
             guard let `self` = self else {return}
-            
+            self.updateToolBtnsShowStatus(isShow: true)
+            self.toolView
+                .adhere(toSuperview: self.view)
+            self.toolView.snp.remakeConstraints {
+                $0.left.right.top.equalTo(self.bottomBar)
+                $0.height.equalTo(54)
+            }
         }
         debugPrint(keyboardHeight)
     }
 }
 
 extension DPkbsPreviewVC {
-    @objc func settingBtnClick(sender: UIButton) {
-         
+    func updateToolBtnsShowStatus(isShow: Bool) {
+        if isShow {
+            playScrollBtn.isHidden = false
+            flashBtn.isHidden = false
+            fontBtn.isHidden = false
+            bgEffectBtn.isHidden = false
+            sendBtn.isHidden = true
+            hideButton.isHidden = true
+        } else {
+            playScrollBtn.isHidden = true
+            flashBtn.isHidden = true
+            fontBtn.isHidden = true
+            bgEffectBtn.isHidden = true
+            sendBtn.isHidden = false
+            hideButton.isHidden = false
+        }
     }
 }
 
@@ -109,43 +145,58 @@ extension DPkbsPreviewVC {
         textBgV.frame = screenFrame
         textBgV.adhere(toSuperview: view)
             .backgroundColor(.clear)
-        
-        
-        //
-        if styleItem.templateId == "1" {
-            
-        }
+         
         
         let textScrollView = ASTextAutoScrollView.init(frame: self.view.bounds)
         textScrollView.adhere(toSuperview: textBgV)
         textScrollView.scrollView.tapClickViewActionBlock = {
             [weak self] in
             guard let `self` = self else {return}
-            
+            if self.contentTextFeid.isFirstResponder {
+                self.contentTextFeid.resignFirstResponder()
+            }
         }
         
         
     }
     
     func setupAdjustControV() {
-        
+        let fontBar = DPkbsFontBar()
+        fontBar.adhere(toSuperview: view)
+            .backgroundColor(UIColor(hexString: "#333333")!)
+        fontBar.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(bottomBar.snp.top)
+            $0.height.equalTo(65)
+        }
+        fontBar.fontDidSelectBlock = {
+            [weak self] fontNameStr in
+            guard let `self` = self else {return}
+            DispatchQueue.main.async {
+                self.updateScreenContent_font(fontItem: fontNameStr)
+            }
+        }
     }
     
     func setupBottomToolBar() {
-        let bottomBar = UIView()
+        
         bottomBar.adhere(toSuperview: view)
         bottomBar.snp.makeConstraints {
             $0.left.right.equalToSuperview()
             $0.bottom.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-40)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-54)
         }
-        bottomBar.backgroundColor(UIColor.white))
+        bottomBar.backgroundColor(.clear)
          
         //
-        bottomBar.addSubview(toolView)
-        toolView.backgroundColor = UIColor(hexString: "#FAFAFA")
-        toolView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
-        
+        toolView
+            .adhere(toSuperview: view)
+            .backgroundColor(UIColor(hexString: "#333333")!)
+        toolView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 54)
+        toolView.snp.makeConstraints {
+            $0.left.right.top.equalTo(bottomBar)
+            $0.height.equalTo(54)
+        }
         //
         contentTextFeid.delegate = self
         contentTextFeid.textAlignment = .center
@@ -153,64 +204,88 @@ extension DPkbsPreviewVC {
         contentTextFeid.textColor = .black
         contentTextFeid.backgroundColor = .white
         contentTextFeid.inputAccessoryView = toolView
-        contentTextFeid.font = UIFont(name: "PingFangSC-Semibold", size: 16)
+        contentTextFeid.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 14)
         toolView.addSubview(contentTextFeid)
         
-        contentTextFeid.placeholder = "标签..."
+        contentTextFeid.placeholder = "内容..."
         contentTextFeid.clearButtonMode = .whileEditing
         contentTextFeid.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalToSuperview().offset(-20)
             $0.width.equalTo(300)
-            $0.height.equalTo(36)
+            $0.height.equalTo(34)
         }
+        contentTextFeid.layer.cornerRadius = 6
         //
-        
+        sendBtn.isHidden = true
         sendBtn.addTarget(self, action: #selector(sendBtnClick(sender: )), for: .touchUpInside)
         sendBtn.adhere(toSuperview: toolView)
-            .image(UIImage(named: ""))
-            .backgroundColor(.lightGray)
+            .image(UIImage(named: "i_send"))
         sendBtn.snp.makeConstraints {
             $0.centerY.equalTo(contentTextFeid.snp.centerY)
-            $0.left.equalTo(contentTextFeid.snp.right).offset(20)
+            $0.left.equalTo(contentTextFeid.snp.right).offset(10)
             $0.width.height.equalTo(36)
+        }
+        //
+        hideButton.isHidden = true
+        hideButton
+            .adhere(toSuperview: toolView)
+            .image(UIImage(named: "i_keyborad"))
+            
+        hideButton.addTarget(self, action: #selector(hideButtonClick(sender:)), for: .touchUpInside)
+        toolView.addSubview(hideButton)
+        hideButton.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+            $0.right.equalTo(contentTextFeid.snp.left).offset(-10)
+            $0.centerY.equalToSuperview()
         }
         
         //
-
-        lockBtn.addTarget(self, action: #selector(lockBtnClick(sender: )), for: .touchUpInside)
-        lockBtn.adhere(toSuperview: view)
-            .image(UIImage(named: ""))
-            .backgroundColor(.lightGray)
-        lockBtn.snp.makeConstraints {
-            $0.centerY.equalTo(contentTextFeid.snp.centerY)
-            $0.left.equalToSuperview().offset(34)
-            $0.width.height.equalTo(36)
+        
+        playScrollBtn.adhere(toSuperview: toolView)
+            .image(UIImage(named: "i_pause"), .normal)
+            .image(UIImage(named: "i_play"), .selected)
+        playScrollBtn.addTarget(self, action: #selector(scrollStatusBtnClick(sender: )), for: .touchUpInside)
+        playScrollBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(24)
+            $0.width.height.equalTo(40)
         }
         
         //
-
         flashBtn.addTarget(self, action: #selector(flashBtnClick(sender: )), for: .touchUpInside)
         flashBtn.adhere(toSuperview: toolView)
-            .image(UIImage(named: ""))
-            .backgroundColor(.lightGray)
+            .image(UIImage(named: "i_flashlight_n"), .normal)
+            .image(UIImage(named: "i_light_fill_s"), .selected)
         flashBtn.snp.makeConstraints {
-            $0.centerY.equalTo(contentTextFeid.snp.centerY)
-            $0.left.equalTo(lockBtn.snp.right).offset(34)
-            $0.width.height.equalTo(36)
+            $0.centerY.equalTo(toolView.snp.centerY)
+            $0.left.equalTo(playScrollBtn.snp.right).offset(14)
+            $0.width.height.equalTo(40)
         }
         
         //
-
-        adjustBtn.addTarget(self, action: #selector(adjustBtnClick(sender: )), for: .touchUpInside)
-        adjustBtn.adhere(toSuperview: toolView)
-            .image(UIImage(named: ""))
-            .backgroundColor(.lightGray)
-        adjustBtn.snp.makeConstraints {
-            $0.centerY.equalTo(contentTextFeid.snp.centerY)
-            $0.right.equalToSuperview().offset(-34)
-            $0.width.height.equalTo(36)
+        bgEffectBtn.addTarget(self, action: #selector(bgEffectBtnClick(sender: )), for: .touchUpInside)
+        bgEffectBtn.adhere(toSuperview: toolView)
+            .image(UIImage(named: "i_bg_n"), .normal)
+            .image(UIImage(named: "i_bg_s"), .selected)
+        bgEffectBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().offset(-24)
+            $0.width.height.equalTo(40)
         }
+        
+        
+        //
+        fontBtn.addTarget(self, action: #selector(textFontBtnClick(sender: )), for: .touchUpInside)
+        fontBtn.adhere(toSuperview: toolView)
+            .image(UIImage(named: "i_font_n"), .normal)
+            .image(UIImage(named: "i_font_s"), .selected)
+        fontBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalTo(bgEffectBtn.snp.left).offset(-14)
+            $0.width.height.equalTo(40)
+        }
+        
         
         
         
@@ -221,7 +296,18 @@ extension DPkbsPreviewVC {
 }
 
 extension DPkbsPreviewVC {
+    @objc func settingBtnClick(sender: UIButton) {
+        if contentTextFeid.isFirstResponder {
+            contentTextFeid.resignFirstResponder()
+        }
+    }
+    
+    @objc func hideButtonClick(sender: UIButton) {
+        contentTextFeid.resignFirstResponder()
+    }
+    
     @objc func sendBtnClick(sender: UIButton) {
+        contentTextFeid.resignFirstResponder()
         
         if let contentText = contentTextFeid.text {
              let removeWhiteSpaceString = contentText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -241,36 +327,60 @@ extension DPkbsPreviewVC {
             sender.isSelected = false
             toolView.isHidden = false
             settingBtn.isHidden = false
+            bottomMaskV.isHidden = false
         } else {
             sender.isSelected = true
             toolView.isHidden = true
             settingBtn.isHidden = true
+            bottomMaskV.isHidden = true
+        }
+        
+        if contentTextFeid.isFirstResponder {
+            contentTextFeid.resignFirstResponder()
         }
     }
     
     @objc func flashBtnClick(sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            ScreenBrightnessManager.defaultShared.openSinFlashActionStatus(isOpen: true)
+        } else {
+            sender.isSelected = false
+            ScreenBrightnessManager.defaultShared.openSinFlashActionStatus(isOpen: false)
+        }
         
     }
-    
-    @objc func adjustBtnClick(sender: UIButton) {
-        
+ /*
+    @objc func resetBtnClick(sender: UIButton) {
+        if let textScrollView = textBgV.subviews.first as? ASTextAutoScrollView {
+            textScrollView.resetupDefaultStatus()
+        }
     }
+    */
     
     @objc func textFontBtnClick(sender: UIButton) {
         
     }
     
-    @objc func textColorBtnClick(sender: UIButton) {
-        
-    }
+ 
     
     @objc func bgEffectBtnClick(sender: UIButton) {
         
     }
     
     @objc func scrollStatusBtnClick(sender: UIButton) {
-        
+        if let textScrollView = textBgV.subviews.first as? ASTextAutoScrollView {
+            sender.isSelected = !sender.isSelected
+            if sender.isSelected == true {
+                textScrollView.scrollView.stopScroll()
+            } else {
+                textScrollView.scrollView.startScroll()
+            }
+            
+        }
     }
+    
+   
     
 }
 

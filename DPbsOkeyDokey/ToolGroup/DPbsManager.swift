@@ -13,10 +13,8 @@ import Magnetic
 struct ODStyleItem: Codable {
     var templateId: String = ""
     var iapId: String = ""
-    var templateName: String = ""
-    var coverImg: String = ""
-    var coverColor: String = ""
-    var isPro: Bool = false
+    var bgEffect: String = ""
+    var textColorStr: String = ""
 }
 
 struct SAFontPointSizeItem: Codable {
@@ -85,15 +83,32 @@ struct YAColorItem: Codable {
 class DPbsManager: NSObject {
     static let `default` = DPbsManager()
     
-    var styleList: [ODStyleItem] {
-        return DPbsManager.default.loadJson([ODStyleItem].self, name: "StyleTemplateList") ?? []
+    var styleList_color: [ODStyleItem] {
+        return DPbsManager.default.loadJson([ODStyleItem].self, name: "StyleTemplateList_color") ?? []
     }
+    var styleList_effect: [ODStyleItem] {
+        return DPbsManager.default.loadJson([ODStyleItem].self, name: "StyleTemplateList_effect") ?? []
+    }
+    var styleList_photo: [ODStyleItem] {
+        return DPbsManager.default.loadJson([ODStyleItem].self, name: "StyleTemplateList_photo") ?? []
+    }
+    
+    var fontList_zh: [String] { DPbsManager.default.loadJson([String].self, name: "DPfont_zh") ?? []
+    }
+    var fontList_en: [String] { DPbsManager.default.loadJson([String].self, name: "DPfont_en") ?? []
+    }
+    var fontList_jp: [String] { DPbsManager.default.loadJson([String].self, name: "DPfont_jp") ?? []
+    }
+    
+    
+    /*
     var fontPointSizeList: [SAFontPointSizeItem] { DPbsManager.default.loadJson([SAFontPointSizeItem].self, name: "FontPointSizeList") ?? []
     }
     var fontColorList_TypeA: [YAColorItem] { DPbsManager.default.loadJson([YAColorItem].self, name: "FontColorList_TypeA") ?? []
     }
     var speedList: [SASpeedItem] { DPbsManager.default.loadJson([SASpeedItem].self, name: "SpeedList") ?? []
     }
+     */
 }
 
 

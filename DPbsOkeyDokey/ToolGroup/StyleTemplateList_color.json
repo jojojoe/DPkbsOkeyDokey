@@ -1,0 +1,74 @@
+[
+    
+    {
+        "templateId": "c1",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF"
+
+    },
+    {
+        "templateId": "c2",
+        "iapId": "",
+        "bgEffect" : "#FFFFFF",
+        "textColorStr" : "#000000"
+
+    },
+    {
+        "templateId": "c3",
+        "iapId": "",
+        "bgEffect" : "#2D4FB7",
+        "textColorStr" : "#FFFFFF"
+
+    },
+    {
+        "templateId": "c4",
+        "iapId": "",
+        "bgEffect" : "#BBCCFF",
+        "textColorStr" : "#A9231B"
+
+    },
+    {
+        "templateId": "c5",
+        "iapId": "",
+        "bgEffect" : "#217B01",
+        "textColorStr" : "#FFFFFF"
+
+    },
+    {
+        "templateId": "c6",
+        "iapId": "",
+        "bgEffect" : "#EFE842",
+        "textColorStr" : "#009CA6"
+
+    },
+    {
+        "templateId": "c7",
+        "iapId": "",
+        "bgEffect" : "#DFC798",
+        "textColorStr" : "#6F2121"
+
+    },
+    {
+        "templateId": "c8",
+        "iapId": "",
+        "bgEffect" : "#DF5EE1",
+        "textColorStr" : "#FEF283"
+
+    },
+    {
+        "templateId": "c9",
+        "iapId": "",
+        "bgEffect" : "#13EADD",
+        "textColorStr" : "#AF00FF"
+
+    },
+    {
+        "templateId": "c10",
+        "iapId": "",
+        "bgEffect" : "#CD0062",
+        "textColorStr" : "#FFFFFF"
+
+    }
+]
+

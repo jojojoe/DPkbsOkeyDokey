@@ -69,10 +69,6 @@ class ASAutoScrollView: UIView {
         invalidateTimer()
     }
     
-    
-    
-  
-    
     init(frame: CGRect, viewsList: [UIView]) {
 
         contentRect = frame

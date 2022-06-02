@@ -22,7 +22,7 @@ class ASTextAutoScrollView: UIView {
             updateContentLabel()
         }
     }
-    var sysFontFileName: String = "ProggyCleanSZ-1.ttf" {
+    var sysFontFileName: String = "AppleSDGothicNeo-Bold" {
         didSet {
             updateContentLabel()
         }
@@ -42,7 +42,7 @@ class ASTextAutoScrollView: UIView {
             updateContentLabel()
         }
     }
-    var sysSpeed: CGFloat = 0.05 {
+    var sysSpeed: CGFloat = 0.01 {
         didSet {
             scrollView.undateScrollSpeed(speed: sysSpeed)
         }
@@ -60,6 +60,7 @@ class ASTextAutoScrollView: UIView {
             
         }
     }
+    
     // 文字缩放动画
     var sysTextScale: Bool  = false {
         didSet {
@@ -128,14 +129,35 @@ extension ASTextAutoScrollView {
         let scrollFrame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
         scrollView = ASAutoScrollView.init(frame: scrollFrame, viewsList: [textLabel])
         addSubview(scrollView)
+        
+        textLabel.clipsToBounds = false
+        textLabel.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
+        
         updateContentLabel()
     }
 }
 
 extension ASTextAutoScrollView {
+    
+    func resetupDefaultStatus() {
+        sysString = "SUPER IDOL LED!"
+        sysFontFileName = "AppleSDGothicNeo-Bold"
+        sysTextColor = UIColor.white
+        sysFontPointSize = 100
+//        sysSpeed = 0.01
+        sysOutlight = false
+        sysReflectionEffect = false
+        sysDoubleLayer = false
+        sysSlantEffect = false
+        sysTextStroke = false
+        sysTextScale = false
+        sysTextShake = false
+        sysTextFlash = false
+        updateContentLabel()
+    }
+    
     func updateContentLabel() {
-        textLabel.clipsToBounds = false
-        textLabel.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
+       
         
         let font = UIFont(name: sysFontFileName, size: sysFontPointSize) ?? UIFont.systemFont(ofSize: sysFontPointSize)
         
@@ -171,8 +193,6 @@ extension ASTextAutoScrollView {
         scrollView.scrollConfig.contentTextString = sysString
         // 文字字体
         scrollView.scrollConfig.contentTextFont = font
-        
-        
         
         // 更新scroll 的内容
         scrollView.updateContentString(viewsList: [textLabel])
