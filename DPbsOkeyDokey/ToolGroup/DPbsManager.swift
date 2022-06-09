@@ -15,6 +15,8 @@ struct ODStyleItem: Codable {
     var iapId: String = ""
     var bgEffect: String = ""
     var textColorStr: String = ""
+    var thumbImg: String = ""
+    var bigImg: String = ""
 }
 
 struct SAFontPointSizeItem: Codable {

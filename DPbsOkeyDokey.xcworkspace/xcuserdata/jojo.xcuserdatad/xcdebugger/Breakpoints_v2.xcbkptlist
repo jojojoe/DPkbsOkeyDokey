@@ -7,64 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52AC558F-5FB1-492D-9EDB-1EB0E2D9522A"
+            uuid = "54F00409-8C82-427F-BCA1-578EA049BD0E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DPbsOkeyDokey/MainGroup/DPkbsFontBar.swift"
+            filePath = "DPbsOkeyDokey/MainGroup/ViewsGroup/DPkbsEffectView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "addWaterPointWaveEffect()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B70E9E3F-4BBE-40E9-8245-7522791627E7"
+            uuid = "8A1BD14F-9F98-409F-AD42-DB287B7CEA06"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DPbsOkeyDokey/MainGroup/DPkbsFontBar.swift"
+            filePath = "DPbsOkeyDokey/StuffViews/SSBreathView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "20298B50-6770-4ABC-8EE9-9E57F095D705"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DPbsOkeyDokey/MainGroup/DPkbsFontBar.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "667EDB18-D172-4FD5-9761-33C89EC32623"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DPbsOkeyDokey/MainGroup/DPkbsFontBar.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "setupContainer(size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

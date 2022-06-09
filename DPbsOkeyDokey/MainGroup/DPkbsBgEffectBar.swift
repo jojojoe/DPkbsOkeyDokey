@@ -57,7 +57,7 @@ class DPkbsBgEffectBar: UIView {
             $0.height.equalTo(50)
             $0.left.equalToSuperview().offset(80)
         }
-        collection.register(cellWithClass: ASCgymFontCell.self)
+        collection.register(cellWithClass: ASCgymBgEffectCell.self)
         
     }
 
@@ -71,7 +71,6 @@ extension DPkbsBgEffectBar: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return effectTypeList.count
-
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -97,7 +96,7 @@ extension DPkbsBgEffectBar: UIPickerViewDataSource, UIPickerViewDelegate {
 
 extension DPkbsBgEffectBar: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: ASCgymFontCell.self, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withClass: ASCgymBgEffectCell.self, for: indexPath)
         var styleItem: ODStyleItem = DPbsManager.default.styleList_effect[0]
         if currentDanweiIndex == 0 {
             styleItem =  DPbsManager.default.styleList_effect[indexPath.item]
@@ -109,15 +108,14 @@ extension DPkbsBgEffectBar: UICollectionViewDataSource {
             styleItem =  DPbsManager.default.styleList_photo[indexPath.item]
             
         }
-        cell.layer.cornerRadius = 6
-        cell.layer.masksToBounds = true
+//        cell.layer.cornerRadius = 6
+//        cell.layer.masksToBounds = true
         
+        cell.bgImgV.image(styleItem.thumbImg)
         
         if currentSelectItem?.templateId == styleItem.templateId {
-            cell.fontLabel.color(UIColor(hexString: "#000000")!)
             cell.selectV.isHidden = false
         } else {
-            cell.fontLabel.color(UIColor(hexString: "#FFFFFF")!)
             cell.selectV.isHidden = true
         }
         
@@ -146,7 +144,7 @@ extension DPkbsBgEffectBar: UICollectionViewDataSource {
 
 extension DPkbsBgEffectBar: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 60, height: 38)
+        return CGSize(width: 60, height: 44)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -167,16 +165,17 @@ extension DPkbsBgEffectBar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         var item: ODStyleItem = DPbsManager.default.styleList_color[0]
+        currentSelectItem = item
         if currentDanweiIndex == 0 {
             item = DPbsManager.default.styleList_effect[indexPath.item]
         } else if currentDanweiIndex == 1 {
             item = DPbsManager.default.styleList_color[indexPath.item]
-        } else if currentDanweiIndex == 1 {
-            item = DPbsManager.default.styleList_effect[indexPath.item]
+        } else if currentDanweiIndex == 2 {
+            item = DPbsManager.default.styleList_photo[indexPath.item]
         }
         
         didSelectBlock?(item)
-        currentSelectItem
+        
         collectionView.reloadData()
     }
     
@@ -187,8 +186,9 @@ extension DPkbsBgEffectBar: UICollectionViewDelegate {
 
 
 class ASCgymBgEffectCell: UICollectionViewCell {
-    let fontLabel = UILabel()
+    let bgImgV = UIImageView()
     let selectV = UIView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -200,30 +200,24 @@ class ASCgymBgEffectCell: UICollectionViewCell {
     
     func setupView() {
         //
-        backgroundColor(UIColor(hexString: "#161616")!)
+//        backgroundColor(UIColor(hexString: "#161616")!)
         //
-        selectV.adhere(toSuperview: contentView)
-            .backgroundColor(UIColor(hexString: "#EDCC78")!)
-        selectV.snp.makeConstraints {
+        bgImgV.adhere(toSuperview: contentView)
+            .contentMode(.scaleAspectFill)
+        bgImgV.layer.cornerRadius = 8
+        bgImgV.clipsToBounds()
+        bgImgV.snp.makeConstraints {
             $0.left.right.top.bottom.equalToSuperview()
         }
         //
-        fontLabel
-            .textAlignment(.center)
-            .text("Aa")
-            .adjustsFontSizeToFitWidth()
-            .color(UIColor(hexString: "#FFFFFF")!)
-            .adhere(toSuperview: contentView)
-        fontLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.equalTo(50)
-            $0.height.equalTo(38)
+        selectV.adhere(toSuperview: contentView)
+            .backgroundColor(UIColor.clear)
+        selectV.layer.borderColor = UIColor(hexString: "EDCC78")?.cgColor
+        selectV.layer.borderWidth = 2
+        selectV.layer.cornerRadius = 8
+        selectV.snp.makeConstraints {
+            $0.left.right.top.bottom.equalToSuperview()
         }
-       
-        
-        
-  
-        
     }
 }
 

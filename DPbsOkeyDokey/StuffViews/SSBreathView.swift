@@ -66,7 +66,7 @@ class BreatheView: UIView {
             circles.append(circle)
             container.addSublayer(circle)
         }
-        
+        container.fillColor = UIColor.clear.cgColor
         return container
     }
     

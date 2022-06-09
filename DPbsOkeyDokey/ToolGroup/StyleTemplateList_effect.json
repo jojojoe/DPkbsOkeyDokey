@@ -4,71 +4,81 @@
         "templateId": "e1",
         "iapId": "",
         "bgEffect" : "#000000",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_color_1",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e2",
         "iapId": "",
         "bgEffect" : "#FFFFFF",
-        "textColorStr" : "#000000"
-
+        "textColorStr" : "#000000",
+        "thumbImg" : "bg_color_2",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e3",
         "iapId": "",
         "bgEffect" : "#2D4FB7",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_color_3",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e4",
         "iapId": "",
         "bgEffect" : "#BBCCFF",
-        "textColorStr" : "#A9231B"
-
+        "textColorStr" : "#A9231B",
+        "thumbImg" : "bg_color_4",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e5",
         "iapId": "",
         "bgEffect" : "#217B01",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_color_5",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e6",
         "iapId": "",
         "bgEffect" : "#EFE842",
-        "textColorStr" : "#009CA6"
-
+        "textColorStr" : "#009CA6",
+        "thumbImg" : "bg_color_6",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e7",
         "iapId": "",
         "bgEffect" : "#DFC798",
-        "textColorStr" : "#6F2121"
-
+        "textColorStr" : "#6F2121",
+        "thumbImg" : "bg_color_7",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e8",
         "iapId": "",
         "bgEffect" : "#DF5EE1",
-        "textColorStr" : "#FEF283"
-
+        "textColorStr" : "#FEF283",
+        "thumbImg" : "bg_color_8",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e9",
         "iapId": "",
         "bgEffect" : "#13EADD",
-        "textColorStr" : "#AF00FF"
-
+        "textColorStr" : "#AF00FF",
+        "thumbImg" : "bg_color_9",
+        "bigImg" : "bg_color_"
     },
     {
         "templateId": "e10",
         "iapId": "",
         "bgEffect" : "#CD0062",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_color_10",
+        "bigImg" : "bg_color_"
     }
 ]
-
+ 

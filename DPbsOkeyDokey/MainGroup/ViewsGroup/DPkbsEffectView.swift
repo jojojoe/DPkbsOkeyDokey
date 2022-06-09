@@ -11,9 +11,13 @@ import Pulsator
 import AVFAudio
 
 class DPkbsEffectView: UIView, AVAudioPlayerDelegate {
+    let bgImgV = UIImageView()
+    var currentEffectV: UIView?
+    var currentPlusator: Pulsator?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
         setupContentView()
         
     }
@@ -21,13 +25,19 @@ class DPkbsEffectView: UIView, AVAudioPlayerDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    func setupView() {
+        bgImgV.adhere(toSuperview: self)
+            .contentMode(.scaleAspectFill)
+        bgImgV.snp.makeConstraints {
+            $0.left.right.top.bottom.equalToSuperview()
+        }
+        updateContentBgColor(bgColorItem: YAColorItem(type: "rgb", colorName: "#000000"))
+    }
     func setupContentView() {
-        updateContentBgColor(color: .black)
+        
 //        addRainyEffect()
 //        addRipple2Effect()
 //        addRipple1Effect()
-        
 //        addWaterPointWaveEffect()
 //        setupSiriWaveEffect()
 //        setupLineWaveEffect()
@@ -43,14 +53,79 @@ extension DPkbsEffectView {
 
 extension DPkbsEffectView {
     func clearContentEffect() {
-        self.removeSubviews()
+        if let effectV = currentEffectV {
+            if let waterPointPlusator = currentPlusator {
+                waterPointPlusator.stop()
+                waterPointPlusator.removeFromSuperlayer()
+            } else {
+                
+            }
+            effectV.removeFromSuperview()
+        }
     }
     
-    func updateContentBgColor(color: UIColor) {
-        backgroundColor = color
+    func updateContentBgColor(bgColorItem: YAColorItem) {
+        clearContentEffect()
+        
+        let color = bgColorItem.itemColor(self.bounds.size)
+        bgImgV.backgroundColor = color
+        bgImgV.image = nil
     }
-
-    
+    func updateContentBgPhotoImage(photoImgStr: String) {
+        clearContentEffect()
+        
+        if let img = UIImage(named: photoImgStr) {
+            bgImgV.backgroundColor(.clear)
+            bgImgV.image = img
+        }
+        
+    }
+    func updateContentBgEffect(effectStr: String, bgColorItem: YAColorItem) {
+        clearContentEffect()
+        
+        if effectStr == "e1" {
+            
+            addRainyEffect()
+            
+        } else if effectStr == "e2" {
+            
+            addRipple2Effect()
+            
+        } else if effectStr == "e3" {
+            
+            addRipple1Effect()
+            
+        } else if effectStr == "e4" {
+            
+            addWaterPointWaveEffect()
+            
+        } else if effectStr == "e5" {
+            
+            setupSiriWaveEffect()
+            
+        } else if effectStr == "e6" {
+            
+            setupLineWaveEffect()
+            
+        } else if effectStr == "e7" {
+            
+            setupBreathEffect()
+            
+        } else if effectStr == "e8" {
+            
+            setupSpacesStarLineEffect()
+        } else if effectStr == "e9" {
+            
+            setupSpacesStarLineEffect()
+        } else if effectStr == "e10" {
+            
+            setupSpacesStarLineEffect()
+        }
+        
+        let color = bgColorItem.itemColor(self.bounds.size)
+        bgImgV.backgroundColor = color
+        bgImgV.image = nil
+    }
 }
 
 extension DPkbsEffectView {
@@ -59,11 +134,12 @@ extension DPkbsEffectView {
         let rainyEffectView = RainyEffecView(frame: CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height))
         rainyEffectView.adhere(toSuperview: self)
         rainyEffectView.didBeginRefresh()
+        
+        currentEffectV = rainyEffectView
     }
     
     func addRipple2Effect() {
         let rippleEffectView = RippleEffectView()
-        
 //        rippleEffectView.tileImage = UIImage(named: "sliderPoint")
         rippleEffectView.tileImage = UIImage(named: "cell-image")
         rippleEffectView.magnitude = 0.2
@@ -104,6 +180,8 @@ extension DPkbsEffectView {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             rippleEffectView.startAnimating()
         }
+        
+        currentEffectV = rippleEffectView
     }
     
     func addRipple1Effect() {
@@ -144,7 +222,7 @@ extension DPkbsEffectView {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             rippleEffectView.startAnimating()
         }
-        
+        currentEffectV = rippleEffectView
     }
     
     func addWaterPointWaveEffect() {
@@ -164,12 +242,14 @@ extension DPkbsEffectView {
         pulsator.start()
         
         
+        currentPlusator = pulsator
+        currentEffectV = pulsaV
     }
     
     func setupSiriWaveEffect() {
         let siriWave = SiriWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
         siriWave.adhere(toSuperview: self)
-
+        
         var ampl: CGFloat = 0.8
         let speed: CGFloat = 0.25
 
@@ -184,7 +264,7 @@ extension DPkbsEffectView {
                 modulate()
             }
         }
-
+        currentEffectV = siriWave
     }
     
     func setupLineWaveEffect() {
@@ -194,6 +274,8 @@ extension DPkbsEffectView {
             $0.left.right.top.bottom.equalToSuperview()
         }
         waveView.start()
+        
+        currentEffectV = waveView
     }
     
     func setupBreathEffect() {
@@ -202,6 +284,8 @@ extension DPkbsEffectView {
         breathBgV.snp.makeConstraints {
             $0.left.right.top.bottom.equalToSuperview()
         }
+        
+        currentEffectV = breathBgV
     }
     
     func setupSpacesStarLineEffect() {
@@ -257,6 +341,9 @@ extension DPkbsEffectView {
         let starView = SSStarSpaceView.init(frame: bounds)
         starView.backgroundColor(.clear)
         spaceBgView.addSubview(starView)
+        
+        //
+        currentEffectV = spaceBgView
     }
 }
 

@@ -24,7 +24,8 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
     let hideButton = UIButton()
     let bottomMaskV = UIView()
     var currentStyleItem: ODStyleItem?
-    
+    let fontBar = DPkbsFontBar()
+    let bgEffectBar = DPkbsBgEffectBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         
         //
         
-        bottomMaskV.backgroundColor(UIColor.white.withAlphaComponent(0.2))
+        bottomMaskV.backgroundColor(UIColor(hexString: "#333333")!)
             .adhere(toSuperview: view)
         bottomMaskV.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
@@ -161,7 +162,7 @@ extension DPkbsPreviewVC {
     }
     
     func setupAdjustControV() {
-        let fontBar = DPkbsFontBar()
+        
         fontBar.adhere(toSuperview: view)
             .backgroundColor(UIColor(hexString: "#333333")!)
         fontBar.snp.makeConstraints {
@@ -176,6 +177,24 @@ extension DPkbsPreviewVC {
                 self.updateScreenContent_font(fontItem: fontNameStr)
             }
         }
+        fontBar.isHidden = true
+        
+        //
+        bgEffectBar.adhere(toSuperview: view)
+            .backgroundColor(UIColor(hexString: "#333333")!)
+        bgEffectBar.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(bottomBar.snp.top)
+            $0.height.equalTo(65)
+        }
+        bgEffectBar.didSelectBlock = {
+            [weak self] bgStyleItem in
+            guard let `self` = self else {return}
+            DispatchQueue.main.async {
+                self.updateBgEffect(styleItem: bgStyleItem)
+            }
+        }
+        
     }
     
     func setupBottomToolBar() {
@@ -386,8 +405,18 @@ extension DPkbsPreviewVC {
 
 extension DPkbsPreviewVC {
     func updateScreenContent_canvasColor(colorItem: YAColorItem) {
-        let color = colorItem.itemColor(view.bounds.size)
-        effectBgV.updateContentBgColor(color: color)
+        
+        effectBgV.updateContentBgColor(bgColorItem: colorItem)
+    }
+    
+    func updateScreenContent_canvasBgPhoto(photoStr: String) {
+        effectBgV.updateContentBgPhotoImage(photoImgStr: photoStr)
+    }
+    
+    func updateScreenContent_canvasBgEffect(effectItem: ODStyleItem) {
+        
+        effectBgV.updateContentBgEffect(effectStr: effectItem.templateId, bgColorItem: YAColorItem(type: "rgb", colorName: effectItem.bgEffect))
+        
         
     }
     
@@ -396,6 +425,20 @@ extension DPkbsPreviewVC {
         ScreenBrightnessManager.defaultShared.openSinFlashActionStatus(isOpen: isOn)
     }
     
+    
+    func updateBgEffect(styleItem: ODStyleItem) {
+        if styleItem.templateId.contains("c") {
+            self.updateScreenContent_textColor(colorItem: YAColorItem(type: "rgb", colorName: styleItem.textColorStr))
+            self.updateScreenContent_canvasColor(colorItem: YAColorItem(type: "rgb", colorName: styleItem.bgEffect))
+        } else if styleItem.templateId.contains("e") {
+            self.updateScreenContent_textColor(colorItem: YAColorItem(type: "rgb", colorName: styleItem.textColorStr))
+            self.updateScreenContent_canvasBgEffect(effectItem: styleItem)
+            
+        } else if styleItem.templateId.contains("p") {
+            self.updateScreenContent_textColor(colorItem: YAColorItem(type: "rgb", colorName: styleItem.textColorStr))
+            self.updateScreenContent_canvasBgPhoto(photoStr: styleItem.bigImg)
+        }
+    }
 }
 
 extension DPkbsPreviewVC {

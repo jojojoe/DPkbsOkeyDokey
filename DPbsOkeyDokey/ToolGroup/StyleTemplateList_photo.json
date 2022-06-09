@@ -1,74 +1,131 @@
 [
-    
     {
         "templateId": "p1",
         "iapId": "",
         "bgEffect" : "#000000",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_1_t",
+        "bigImg" : "bg_photo_1"
     },
     {
         "templateId": "p2",
         "iapId": "",
         "bgEffect" : "#FFFFFF",
-        "textColorStr" : "#000000"
-
+        "textColorStr" : "#000000",
+        "thumbImg" : "bg_photo_2_t",
+        "bigImg" : "bg_photo_2"
     },
     {
         "templateId": "p3",
         "iapId": "",
         "bgEffect" : "#2D4FB7",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#000000",
+        "thumbImg" : "bg_photo_3_t",
+        "bigImg" : "bg_photo_3"
     },
     {
         "templateId": "p4",
         "iapId": "",
         "bgEffect" : "#BBCCFF",
-        "textColorStr" : "#A9231B"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_4_t",
+        "bigImg" : "bg_photo_4"
     },
     {
         "templateId": "p5",
         "iapId": "",
         "bgEffect" : "#217B01",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#A9231B",
+        "thumbImg" : "bg_photo_5_t",
+        "bigImg" : "bg_photo_5"
     },
     {
         "templateId": "p6",
         "iapId": "",
         "bgEffect" : "#EFE842",
-        "textColorStr" : "#009CA6"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_6_t",
+        "bigImg" : "bg_photo_6"
     },
     {
         "templateId": "p7",
         "iapId": "",
         "bgEffect" : "#DFC798",
-        "textColorStr" : "#6F2121"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_7_t",
+        "bigImg" : "bg_photo_7"
     },
     {
         "templateId": "p8",
         "iapId": "",
         "bgEffect" : "#DF5EE1",
-        "textColorStr" : "#FEF283"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_8_t",
+        "bigImg" : "bg_photo_8"
     },
     {
         "templateId": "p9",
         "iapId": "",
         "bgEffect" : "#13EADD",
-        "textColorStr" : "#AF00FF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_9_t",
+        "bigImg" : "bg_photo_9"
     },
     {
         "templateId": "p10",
         "iapId": "",
         "bgEffect" : "#CD0062",
-        "textColorStr" : "#FFFFFF"
-
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_10_t",
+        "bigImg" : "bg_photo_10"
+    },
+    {
+        "templateId": "p11",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_11_t",
+        "bigImg" : "bg_photo_11"
+    },
+    {
+        "templateId": "p12",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_12_t",
+        "bigImg" : "bg_photo_12"
+    },
+    {
+        "templateId": "p13",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_13_t",
+        "bigImg" : "bg_photo_13"
+    },
+    {
+        "templateId": "p14",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_14_t",
+        "bigImg" : "bg_photo_14"
+    },
+    {
+        "templateId": "p15",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_15_t",
+        "bigImg" : "bg_photo_15"
+    },
+    {
+        "templateId": "p16",
+        "iapId": "",
+        "bgEffect" : "#000000",
+        "textColorStr" : "#FFFFFF",
+        "thumbImg" : "bg_photo_16_t",
+        "bigImg" : "bg_photo_16"
     }
 ]
-
+ 
