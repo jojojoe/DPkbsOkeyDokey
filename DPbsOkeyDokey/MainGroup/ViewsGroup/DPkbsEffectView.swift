@@ -143,8 +143,8 @@ extension DPkbsEffectView {
 //        rippleEffectView.tileImage = UIImage(named: "sliderPoint")
         rippleEffectView.tileImage = UIImage(named: "cell-image")
         rippleEffectView.magnitude = 0.2
-        rippleEffectView.cellSize = CGSize(width:20, height:20)
-        rippleEffectView.rippleType = .heartbeat
+        rippleEffectView.cellSize = CGSize(width:70, height:70)
+        rippleEffectView.rippleType = .oneWave
         self.addSubview(rippleEffectView)
         
         //Example, simple tile image customization
@@ -189,8 +189,8 @@ extension DPkbsEffectView {
         
 //        rippleEffectView.tileImage = UIImage(named: "sliderPoint")
         rippleEffectView.tileImage = UIImage(named: "cell-image")
-        rippleEffectView.magnitude = 0.2
-        rippleEffectView.cellSize = CGSize(width:20, height:20)
+        rippleEffectView.magnitude = 0.1
+        rippleEffectView.cellSize = CGSize(width:70, height:70)
         rippleEffectView.rippleType = .heartbeat
         self.addSubview(rippleEffectView)
         

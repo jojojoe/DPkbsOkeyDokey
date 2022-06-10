@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */,
-				EBC5ED0F28153FAD00F42093 /* StaticCenter */,
 				EBC5ED052814EFBE00F42093 /* HorScroll */,
 			);
 			path = ViewsGroup;
@@ -191,13 +190,6 @@
 				EB39136B280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift */,
 			);
 			path = HorScroll;
-			sourceTree = "<group>";
-		};
-		EBC5ED0F28153FAD00F42093 /* StaticCenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StaticCenter;
 			sourceTree = "<group>";
 		};
 		EBD6021E280D024B001CDF3B = {

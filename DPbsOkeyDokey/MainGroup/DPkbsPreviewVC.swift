@@ -26,6 +26,7 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
     var currentStyleItem: ODStyleItem?
     let fontBar = DPkbsFontBar()
     let bgEffectBar = DPkbsBgEffectBar()
+    var viewDidLayoutOnce = Once()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,17 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         setupView()
     }
     
+    override func viewDidLayoutSubviews() {
+        
+        viewDidLayoutOnce.run {
+            self.setupAdjustControV()
+        }
+    }
+    
     func setupView() {
         setupContentV()
         setupBottomToolBar()
-        setupAdjustControV()
+        
         
         //
         
@@ -165,11 +173,7 @@ extension DPkbsPreviewVC {
         
         fontBar.adhere(toSuperview: view)
             .backgroundColor(UIColor(hexString: "#333333")!)
-        fontBar.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
-            $0.bottom.equalTo(bottomBar.snp.top)
-            $0.height.equalTo(65)
-        }
+        fontBar.frame = CGRect(x: 0, y: bottomBar.frame.minY, width: self.view.frame.width, height: 65)
         fontBar.fontDidSelectBlock = {
             [weak self] fontNameStr in
             guard let `self` = self else {return}
@@ -182,11 +186,7 @@ extension DPkbsPreviewVC {
         //
         bgEffectBar.adhere(toSuperview: view)
             .backgroundColor(UIColor(hexString: "#333333")!)
-        bgEffectBar.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
-            $0.bottom.equalTo(bottomBar.snp.top)
-            $0.height.equalTo(65)
-        }
+        bgEffectBar.frame = CGRect(x: 0, y: bottomBar.frame.minY, width: self.view.frame.width, height: 65)
         bgEffectBar.didSelectBlock = {
             [weak self] bgStyleItem in
             guard let `self` = self else {return}
@@ -194,7 +194,11 @@ extension DPkbsPreviewVC {
                 self.updateBgEffect(styleItem: bgStyleItem)
             }
         }
-        
+        bgEffectBar.isHidden = true
+        //
+        view.bringSubviewToFront(bottomBar)
+        view.bringSubviewToFront(toolView)
+        view.bringSubviewToFront(bottomMaskV)
     }
     
     func setupBottomToolBar() {
@@ -305,12 +309,7 @@ extension DPkbsPreviewVC {
             $0.width.height.equalTo(40)
         }
         
-        
-        
-        
     }
-    
-    
     
 }
 
@@ -347,11 +346,19 @@ extension DPkbsPreviewVC {
             toolView.isHidden = false
             settingBtn.isHidden = false
             bottomMaskV.isHidden = false
+            if fontBtn.isSelected == true {
+                fontBar.isHidden = false
+            }
+            if bgEffectBar.isHidden == true {
+                bgEffectBar.isHidden = false
+            }
         } else {
             sender.isSelected = true
             toolView.isHidden = true
             settingBtn.isHidden = true
             bottomMaskV.isHidden = true
+            fontBar.isHidden = true
+            bgEffectBar.isHidden = true
         }
         
         if contentTextFeid.isFirstResponder {
@@ -378,13 +385,48 @@ extension DPkbsPreviewVC {
     */
     
     @objc func textFontBtnClick(sender: UIButton) {
-        
+        sender.isSelected = !sender.isSelected
+        //
+        if fontBar.isHidden == false {
+           hiddenFontBar()
+        } else {
+            if bgEffectBar.isHidden == false {
+                hiddenEffectBgBar()
+                bgEffectBtn.isSelected = false
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                    self.showFontBar()
+                }
+            } else {
+                self.showFontBar()
+            }
+        }
+        sender.isUserInteractionEnabled(false)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+            sender.isUserInteractionEnabled(true)
+        }
     }
     
- 
-    
     @objc func bgEffectBtnClick(sender: UIButton) {
-        
+        sender.isSelected = !sender.isSelected
+        //
+        if bgEffectBar.isHidden == false {
+            hiddenEffectBgBar()
+            
+        } else {
+            if fontBar.isHidden == false {
+                hiddenFontBar()
+                fontBtn.isSelected = false
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                    self.showEffectBgBar()
+                }
+            } else {
+                self.showEffectBgBar()
+            }
+        }
+        sender.isUserInteractionEnabled(false)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+            sender.isUserInteractionEnabled(true)
+        }
     }
     
     @objc func scrollStatusBtnClick(sender: UIButton) {
@@ -399,7 +441,47 @@ extension DPkbsPreviewVC {
         }
     }
     
-   
+    func showFontBar() {
+        self.fontBar.isHidden = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+            self.fontBar.frame = CGRect(x: 0, y: self.bottomBar.frame.minY - 65, width: self.view.frame.width, height: 65)
+        } completion: { finished in
+            if finished {
+                
+            }
+        }
+    }
+    
+    func hiddenFontBar() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
+            self.fontBar.frame = CGRect(x: 0, y: self.bottomBar.frame.minY, width: self.view.frame.width, height: 65)
+        } completion: { finished in
+            if finished {
+                self.fontBar.isHidden = true
+            }
+        }
+    }
+    
+    func showEffectBgBar() {
+        self.bgEffectBar.isHidden = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+            self.bgEffectBar.frame = CGRect(x: 0, y: self.bottomBar.frame.minY - 65, width: self.view.frame.width, height: 65)
+        } completion: { finished in
+            if finished {
+                
+            }
+        }
+    }
+    
+    func hiddenEffectBgBar() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
+            self.bgEffectBar.frame = CGRect(x: 0, y: self.bottomBar.frame.minY, width: self.view.frame.width, height: 65)
+        } completion: { finished in
+            if finished {
+                self.bgEffectBar.isHidden = true
+            }
+        }
+    }
     
 }
 
