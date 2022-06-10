@@ -7,7 +7,7 @@
 
 import UIKit
 import MessageUI
-import DeviceKit
+//import DeviceKit
 import NoticeObserveKit
 import ZKProgressHUD
 import StoreKit
@@ -27,8 +27,8 @@ class DPkbsSettingVC: UIViewController {
         super.viewDidLoad()
 
         setupView()
-        updateBuyCoinStatus()
-        addNotificationObserver()
+//        updateBuyCoinStatus()
+//        addNotificationObserver()
     }
     
     override func viewDidLayoutSubviews() {
@@ -146,10 +146,10 @@ class DPkbsSettingVC: UIViewController {
            .backgroundColor(.clear)
         backBtn.addTarget(self, action: #selector(backBtnClick(sender:)), for: .touchUpInside)
         backBtn.snp.makeConstraints {
-           $0.bottom.equalToSuperview()
-           $0.right.equalToSuperview().offset(-20)
-           $0.width.height.equalTo(40)
-       }
+            $0.bottom.equalToSuperview()
+            $0.right.equalToSuperview().offset(-20)
+            $0.width.height.equalTo(40)
+        }
         
         
         //
@@ -164,184 +164,186 @@ class DPkbsSettingVC: UIViewController {
             $0.centerY.equalToSuperview()
             $0.width.height.greaterThanOrEqualTo(10)
         }
-        let tapGes = UITapGestureRecognizer()
-        tapGes.numberOfTapsRequired = 5
-        tapGes.addTarget(self, action: #selector(autoAddCoinBtnClick(gesture: )))
-        topTitleLabel.isUserInteractionEnabled(true)
-        topTitleLabel.addGestureRecognizer(tapGes)
         
         
-        purchaseBanner.adhere(toSuperview: view)
-            .clipsToBounds()
-            .backgroundColor(UIColor(hexString: "#A24B2C")!)
-        purchaseBanner.layer.cornerRadius = 10
-        purchaseBanner.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(24)
-            $0.right.equalToSuperview().offset(-24)
-            $0.top.equalTo(topBanner.snp.bottom).offset(24)
-            $0.height.equalTo(130)
-        }
+//        let tapGes = UITapGestureRecognizer()
+//        tapGes.numberOfTapsRequired = 5
+//        tapGes.addTarget(self, action: #selector(autoAddCoinBtnClick(gesture: )))
+//        topTitleLabel.isUserInteractionEnabled(true)
+//        topTitleLabel.addGestureRecognizer(tapGes)
         
-        //
-        
-        let purchaseTopV = UIView()
-        purchaseTopV.adhere(toSuperview: purchaseBanner)
-            .backgroundColor(UIColor(hexString: "#CDC6C2")!)
-        purchaseTopV.snp.makeConstraints {
-            $0.left.right.top.equalToSuperview()
-            $0.height.equalTo(44)
-        }
-        userCoinLabel.adhere(toSuperview: purchaseTopV)
-            .text("\("您的金币数".localized()): \(TRkbsPurchaseManager.default.coinCount)")
-            .textAlignment(.center)
-            .color(UIColor(hexString: "#A24B2C")!)
-            .fontName(14, "AppleSDGothicNeo-SemiBold")
-        userCoinLabel.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(24)
-            $0.centerY.equalToSuperview()
-            $0.width.height.greaterThanOrEqualTo(10)
-        }
-        //
-        let topCoinImgV = UIImageView()
-        topCoinImgV
-            .image("coin_s")
-            .adhere(toSuperview: purchaseTopV)
-        topCoinImgV.snp.makeConstraints {
-            $0.centerY.equalTo(userCoinLabel.snp.centerY)
-            $0.left.equalTo(userCoinLabel.snp.right).offset(8)
-            $0.height.width.greaterThanOrEqualTo(20)
-        }
-        
-        //
-        let purchaseBottomV = UIView()
-        purchaseBottomV.adhere(toSuperview: purchaseBanner)
-        purchaseBottomV.snp.makeConstraints {
-            $0.left.right.bottom.equalToSuperview()
-            $0.top.equalTo(purchaseTopV.snp.bottom)
-        }
-        //
-        let coinImgV = UIImageView()
-        coinImgV
-            .image("coin_b")
-            .adhere(toSuperview: purchaseBottomV)
-        coinImgV.snp.makeConstraints {
-            $0.centerY.equalTo(purchaseBottomV.snp.centerY)
-            $0.left.equalTo(purchaseBottomV.snp.left).offset(14)
-            $0.height.width.greaterThanOrEqualTo(50)
-        }
-        //
-        
-        coinCountLabel.adhere(toSuperview: purchaseBottomV)
-            .textAlignment(.left)
-            .color(.white)
-            .fontName(18, "AppleSDGothicNeo-SemiBold")
-        coinCountLabel.snp.makeConstraints {
-            $0.centerY.equalTo(coinImgV.snp.centerY)
-            $0.left.equalTo(coinImgV.snp.right).offset(10)
-            $0.width.height.greaterThanOrEqualTo(10)
-        }
-        
-        let priceBgImgV = UIImageView()
-        priceBgImgV.adhere(toSuperview: purchaseBottomV)
-            .backgroundColor(UIColor(hexString: "#CDC6C2")!)
-
-        priceLabel.adhere(toSuperview: purchaseBottomV)
-            .textAlignment(.right)
-            .color(UIColor(hexString: "#A24B2C")!)
-            .fontName(18, "AppleSDGothicNeo-Bold")
-        priceLabel.snp.makeConstraints {
-            $0.right.equalToSuperview().offset(-40)
-            $0.centerY.equalToSuperview()
-            $0.width.height.greaterThanOrEqualTo(10)
-        }
-        priceBgImgV.layer.cornerRadius = 40/2
-        priceBgImgV.snp.makeConstraints {
-            $0.center.equalTo(priceLabel.snp.center)
-            $0.height.equalTo(40)
-            $0.left.equalTo(priceLabel.snp.left).offset(-15)
-        }
-        //
-        let purchaseBtn = UIButton()
-        purchaseBtn.adhere(toSuperview: purchaseBanner)
-        purchaseBtn.snp.makeConstraints {
-            $0.left.right.top.bottom.equalToSuperview()
-        }
-        purchaseBtn.addTarget(self, action: #selector(purchaseBtnClick(sender: )), for: .touchUpInside)
+//
+//        purchaseBanner.adhere(toSuperview: view)
+//            .clipsToBounds()
+//            .backgroundColor(UIColor(hexString: "#A24B2C")!)
+//        purchaseBanner.layer.cornerRadius = 10
+//        purchaseBanner.snp.makeConstraints {
+//            $0.left.equalToSuperview().offset(24)
+//            $0.right.equalToSuperview().offset(-24)
+//            $0.top.equalTo(topBanner.snp.bottom).offset(24)
+//            $0.height.equalTo(130)
+//        }
+//
+//        //
+//
+//        let purchaseTopV = UIView()
+//        purchaseTopV.adhere(toSuperview: purchaseBanner)
+//            .backgroundColor(UIColor(hexString: "#CDC6C2")!)
+//        purchaseTopV.snp.makeConstraints {
+//            $0.left.right.top.equalToSuperview()
+//            $0.height.equalTo(44)
+//        }
+//        userCoinLabel.adhere(toSuperview: purchaseTopV)
+//            .text("\("您的金币数".localized()): \(TRkbsPurchaseManager.default.coinCount)")
+//            .textAlignment(.center)
+//            .color(UIColor(hexString: "#A24B2C")!)
+//            .fontName(14, "AppleSDGothicNeo-SemiBold")
+//        userCoinLabel.snp.makeConstraints {
+//            $0.left.equalToSuperview().offset(24)
+//            $0.centerY.equalToSuperview()
+//            $0.width.height.greaterThanOrEqualTo(10)
+//        }
+//        //
+//        let topCoinImgV = UIImageView()
+//        topCoinImgV
+//            .image("coin_s")
+//            .adhere(toSuperview: purchaseTopV)
+//        topCoinImgV.snp.makeConstraints {
+//            $0.centerY.equalTo(userCoinLabel.snp.centerY)
+//            $0.left.equalTo(userCoinLabel.snp.right).offset(8)
+//            $0.height.width.greaterThanOrEqualTo(20)
+//        }
+//
+//        //
+//        let purchaseBottomV = UIView()
+//        purchaseBottomV.adhere(toSuperview: purchaseBanner)
+//        purchaseBottomV.snp.makeConstraints {
+//            $0.left.right.bottom.equalToSuperview()
+//            $0.top.equalTo(purchaseTopV.snp.bottom)
+//        }
+//        //
+//        let coinImgV = UIImageView()
+//        coinImgV
+//            .image("coin_b")
+//            .adhere(toSuperview: purchaseBottomV)
+//        coinImgV.snp.makeConstraints {
+//            $0.centerY.equalTo(purchaseBottomV.snp.centerY)
+//            $0.left.equalTo(purchaseBottomV.snp.left).offset(14)
+//            $0.height.width.greaterThanOrEqualTo(50)
+//        }
+//        //
+//
+//        coinCountLabel.adhere(toSuperview: purchaseBottomV)
+//            .textAlignment(.left)
+//            .color(.white)
+//            .fontName(18, "AppleSDGothicNeo-SemiBold")
+//        coinCountLabel.snp.makeConstraints {
+//            $0.centerY.equalTo(coinImgV.snp.centerY)
+//            $0.left.equalTo(coinImgV.snp.right).offset(10)
+//            $0.width.height.greaterThanOrEqualTo(10)
+//        }
+//
+//        let priceBgImgV = UIImageView()
+//        priceBgImgV.adhere(toSuperview: purchaseBottomV)
+//            .backgroundColor(UIColor(hexString: "#CDC6C2")!)
+//
+//        priceLabel.adhere(toSuperview: purchaseBottomV)
+//            .textAlignment(.right)
+//            .color(UIColor(hexString: "#A24B2C")!)
+//            .fontName(18, "AppleSDGothicNeo-Bold")
+//        priceLabel.snp.makeConstraints {
+//            $0.right.equalToSuperview().offset(-40)
+//            $0.centerY.equalToSuperview()
+//            $0.width.height.greaterThanOrEqualTo(10)
+//        }
+//        priceBgImgV.layer.cornerRadius = 40/2
+//        priceBgImgV.snp.makeConstraints {
+//            $0.center.equalTo(priceLabel.snp.center)
+//            $0.height.equalTo(40)
+//            $0.left.equalTo(priceLabel.snp.left).offset(-15)
+//        }
+//        //
+//        let purchaseBtn = UIButton()
+//        purchaseBtn.adhere(toSuperview: purchaseBanner)
+//        purchaseBtn.snp.makeConstraints {
+//            $0.left.right.top.bottom.equalToSuperview()
+//        }
+//        purchaseBtn.addTarget(self, action: #selector(purchaseBtnClick(sender: )), for: .touchUpInside)
         
     }
     
-    @objc func autoAddCoinBtnClick(gesture: UIGestureRecognizer) {
-        TRkbsPurchaseManager.default.addCoin(coin: 10)
-    }
+//    @objc func autoAddCoinBtnClick(gesture: UIGestureRecognizer) {
+//        TRkbsPurchaseManager.default.addCoin(coin: 10)
+//    }
     
     @objc func purchaseBtnClick(sender: UIButton) {
-        if let item = TRkbsPurchaseManager.default.currentBuyModel {
-            selectCoinItem(item: item)
-        }
+//        if let item = TRkbsPurchaseManager.default.currentBuyModel {
+//            selectCoinItem(item: item)
+//        }
         
     }
     
-    func selectCoinItem(item: TRkCoinItem) {
-        // core
-        
-        TRkbsPurchaseManager.default.purchaseIapId(item: item) { (success, errorString) in
-            if success {
-                ZKProgressHUD.showSuccess("购买成功!".localized(), maskStyle: .none, onlyOnceFont: UIFont(name: "AppleSDGothicNeo-SemiBold", size: 16), autoDismissDelay: 0.8) {
-                    [weak self] in
-                    guard let `self` = self else {return}
-                    DispatchQueue.main.async {
-                        
-                    }
-                }
-            } else {
-                ZKProgressHUD.showSuccess("购买失败，请重试!".localized(), maskStyle: .none, onlyOnceFont: UIFont(name: "AppleSDGothicNeo-SemiBold", size: 16), autoDismissDelay: 0.8) {
-                    [weak self] in
-                    guard let `self` = self else {return}
-                    DispatchQueue.main.async {
-                        
-                    }
-                }
-            }
-        }
-    }
+//    func selectCoinItem(item: TRkCoinItem) {
+//        // core
+//
+//        TRkbsPurchaseManager.default.purchaseIapId(item: item) { (success, errorString) in
+//            if success {
+//                ZKProgressHUD.showSuccess("购买成功!".localized(), maskStyle: .none, onlyOnceFont: UIFont(name: "AppleSDGothicNeo-SemiBold", size: 16), autoDismissDelay: 0.8) {
+//                    [weak self] in
+//                    guard let `self` = self else {return}
+//                    DispatchQueue.main.async {
+//
+//                    }
+//                }
+//            } else {
+//                ZKProgressHUD.showSuccess("购买失败，请重试!".localized(), maskStyle: .none, onlyOnceFont: UIFont(name: "AppleSDGothicNeo-SemiBold", size: 16), autoDismissDelay: 0.8) {
+//                    [weak self] in
+//                    guard let `self` = self else {return}
+//                    DispatchQueue.main.async {
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
     
-    func addNotificationObserver() {
-        NotificationCenter.default.nok.observe(name: .pi_noti_coinChange) {[weak self] _ in
-            guard let `self` = self else {return}
-            DispatchQueue.main.async {
-                self.updateCoinChange()
-            }
-        }
-        .invalidated(by: pool)
-        //
-        NotificationCenter.default.nok.observe(name: .pi_noti_priceFetch) {[weak self] _ in
-            guard let `self` = self else {return}
-            DispatchQueue.main.async {
-                self.updateBuyCoinStatus()
-            }
-        }
-        .invalidated(by: pool)
-        
-    }
+//    func addNotificationObserver() {
+//        NotificationCenter.default.nok.observe(name: .pi_noti_coinChange) {[weak self] _ in
+//            guard let `self` = self else {return}
+//            DispatchQueue.main.async {
+//                self.updateCoinChange()
+//            }
+//        }
+//        .invalidated(by: pool)
+//        //
+//        NotificationCenter.default.nok.observe(name: .pi_noti_priceFetch) {[weak self] _ in
+//            guard let `self` = self else {return}
+//            DispatchQueue.main.async {
+//                self.updateBuyCoinStatus()
+//            }
+//        }
+//        .invalidated(by: pool)
+//
+//    }
     
-    func updateCoinChange() {
-        userCoinLabel
-            .text("\("您的金币数".localized()): \(TRkbsPurchaseManager.default.coinCount)")
-    }
+//    func updateCoinChange() {
+//        userCoinLabel
+//            .text("\("您的金币数".localized()): \(TRkbsPurchaseManager.default.coinCount)")
+//    }
     
-    func updateBuyCoinStatus() {
-        if let item = TRkbsPurchaseManager.default.currentBuyModel {
-            coinCountLabel.text("x \(item.coin)")
-            if let localPrice = item.localPrice {
-                priceLabel.text(localPrice)
-            } else {
-                priceLabel.text("\(item.price)")
-            }
-        }
-    }
+//    func updateBuyCoinStatus() {
+//        if let item = TRkbsPurchaseManager.default.currentBuyModel {
+//            coinCountLabel.text("x \(item.coin)")
+//            if let localPrice = item.localPrice {
+//                priceLabel.text(localPrice)
+//            } else {
+//                priceLabel.text("\(item.price)")
+//            }
+//        }
+//    }
     
     func showTermsPrivateView() {
-        let contentV = TRkbsSettingPrivateTermsView()
+        let contentV = DPbsPrivateTermsView()
         contentV.adhere(toSuperview: view)
         contentV.snp.makeConstraints {
             $0.left.right.top.bottom.equalToSuperview()

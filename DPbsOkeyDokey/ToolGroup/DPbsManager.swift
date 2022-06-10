@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-import Magnetic
+//import Magnetic
 
 struct ODStyleItem: Codable {
     var templateId: String = ""
@@ -151,30 +151,30 @@ extension DPbsManager {
 
 
 // MARK: - ImageNode
-class ImageNode: Node {
-    override var image: UIImage? {
-        didSet {
-            texture = image.map { SKTexture(image: $0) }
-            fillTexture = texture
-        }
-    }
-    /**
-     The animation to execute when the node is selected.
-     */
-    override func selectedAnimation() {
-        run(.scale(to: 4/3, duration: 0.2))
-        if let texture = texture {
-            self.fillTexture = texture
-        }
-    }
-    /**
-     The animation to execute when the node is deselected.
-     */
-    override func deselectedAnimation() {
-        run(.scale(to: 1, duration: 0.2))
-//        self.fillTexture = nil
-//        self.fillColor = color
-    }
-}
+//class ImageNode: Node {
+//    override var image: UIImage? {
+//        didSet {
+//            texture = image.map { SKTexture(image: $0) }
+//            fillTexture = texture
+//        }
+//    }
+//    /**
+//     The animation to execute when the node is selected.
+//     */
+//    override func selectedAnimation() {
+//        run(.scale(to: 4/3, duration: 0.2))
+//        if let texture = texture {
+//            self.fillTexture = texture
+//        }
+//    }
+//    /**
+//     The animation to execute when the node is deselected.
+//     */
+//    override func deselectedAnimation() {
+//        run(.scale(to: 1, duration: 0.2))
+////        self.fillTexture = nil
+////        self.fillColor = color
+//    }
+//}
 
 

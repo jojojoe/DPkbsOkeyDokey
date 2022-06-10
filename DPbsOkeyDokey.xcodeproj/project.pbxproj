@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		950F654D2F3BB1BD701FDC82 /* Pods_DPbsOkeyDokey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5571ED003B72EA76F0F2A52 /* Pods_DPbsOkeyDokey.framework */; };
 		EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00457828163D6700645EB1 /* SSLineWave.swift */; };
+		EB21CF202852F5730036B705 /* DPbsPrivateTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB21CF1F2852F5730036B705 /* DPbsPrivateTermsView.swift */; };
 		EB39136A280EBAC1007D77FE /* DPkbsHorScrollPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */; };
 		EB39136C280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39136B280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift */; };
 		EB3D0962283F7BE8001E1EB3 /* RainyEffecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D0961283F7BE8001E1EB3 /* RainyEffecView.swift */; };
@@ -43,7 +44,6 @@
 		EBD60232280D024B001CDF3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD60230280D024B001CDF3B /* Main.storyboard */; };
 		EBD60234280D024E001CDF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD60233280D024E001CDF3B /* Assets.xcassets */; };
 		EBD60237280D024E001CDF3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD60235280D024E001CDF3B /* LaunchScreen.storyboard */; };
-		EBD60241280D04D6001CDF3B /* DPkbsMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60240280D04D6001CDF3B /* DPkbsMainVC.swift */; };
 		EBD60243280D1BDF001CDF3B /* DPkbsSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60242280D1BDF001CDF3B /* DPkbsSettingVC.swift */; };
 		EBD60245280D1BEB001CDF3B /* DPkbsStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */; };
 		EBD6024A280D3D48001CDF3B /* DPbsExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */; };
@@ -56,6 +56,7 @@
 		5CCDA73006CCFB45E80F06D5 /* Pods-DPbsOkeyDokey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPbsOkeyDokey.release.xcconfig"; path = "Target Support Files/Pods-DPbsOkeyDokey/Pods-DPbsOkeyDokey.release.xcconfig"; sourceTree = "<group>"; };
 		D5571ED003B72EA76F0F2A52 /* Pods_DPbsOkeyDokey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPbsOkeyDokey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB00457828163D6700645EB1 /* SSLineWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLineWave.swift; sourceTree = "<group>"; };
+		EB21CF1F2852F5730036B705 /* DPbsPrivateTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPbsPrivateTermsView.swift; sourceTree = "<group>"; };
 		EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsHorScrollPreview.swift; sourceTree = "<group>"; };
 		EB39136B280EBACF007D77FE /* DPkbsHorScrollAdjustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsHorScrollAdjustView.swift; sourceTree = "<group>"; };
 		EB3D0961283F7BE8001E1EB3 /* RainyEffecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainyEffecView.swift; sourceTree = "<group>"; };
@@ -132,6 +133,9 @@
 		EB391299280E635B007D77FE /* ViewsGroup */ = {
 			isa = PBXGroup;
 			children = (
+				EB985CF4284861F5004F3675 /* DPkbsFontBar.swift */,
+				EB985CFC28489E95004F3675 /* DPkbsBgEffectBar.swift */,
+				EB21CF1F2852F5730036B705 /* DPbsPrivateTermsView.swift */,
 				EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */,
 				EBC5ED052814EFBE00F42093 /* HorScroll */,
 			);
@@ -242,8 +246,6 @@
 				EB986DA0280D6761008F3340 /* DPkbsPreviewVC.swift */,
 				EBD60242280D1BDF001CDF3B /* DPkbsSettingVC.swift */,
 				EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */,
-				EB985CF4284861F5004F3675 /* DPkbsFontBar.swift */,
-				EB985CFC28489E95004F3675 /* DPkbsBgEffectBar.swift */,
 				EB391299280E635B007D77FE /* ViewsGroup */,
 			);
 			path = MainGroup;
@@ -401,6 +403,7 @@
 				EB3D0964283F7CAC001E1EB3 /* RainScene.swift in Sources */,
 				EBC5ED112815404F00F42093 /* SSBreathView.swift in Sources */,
 				EBD6022B280D024B001CDF3B /* AppDelegate.swift in Sources */,
+				EB21CF202852F5730036B705 /* DPbsPrivateTermsView.swift in Sources */,
 				EB986D9F280D571D008F3340 /* SSStarSpaceView.swift in Sources */,
 				EB5C870F2818F08F0063A432 /* Timeout.swift in Sources */,
 				EB5C870A2818EFB20063A432 /* SiriWaveView.swift in Sources */,
@@ -410,7 +413,6 @@
 				EB9CB67F281A4675002F110A /* RippleEffectView.swift in Sources */,
 				EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */,
 				EBEF484C280FAD91004D368D /* DPkbsEffectView.swift in Sources */,
-				EBD60241280D04D6001CDF3B /* DPkbsMainVC.swift in Sources */,
 				EB3D0962283F7BE8001E1EB3 /* RainyEffecView.swift in Sources */,
 				EB986DA1280D6761008F3340 /* DPkbsPreviewVC.swift in Sources */,
 				EB986DA5280D6CAA008F3340 /* ASAutoScrollView.swift in Sources */,

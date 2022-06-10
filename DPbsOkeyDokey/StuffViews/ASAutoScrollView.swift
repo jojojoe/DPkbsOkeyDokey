@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import SwifterSwift
-import GlitchLabel
+//import GlitchLabel
 
 enum AutoScrollDirection {
     case toLeft

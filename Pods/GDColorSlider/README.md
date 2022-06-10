@@ -1,2 +1,0 @@
-# GDColorSlider
-ColorSlider ColorSelect ColorBar
