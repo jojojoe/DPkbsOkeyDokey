@@ -63,9 +63,25 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF-Pro-Text-Bold.otf</string>
-		<string>SF-Pro-Text-Medium.otf</string>
-		<string>DIGITAL-Regular.ttf</string>
+        <string>Avenir-Black.ttf</string>
+        <string>SignusDigitalSquareNbp-q8Dd.ttf</string>
+        <string>SanstainaRegular-52e8.ttf</string>
+        <string>NbpInformaFivesix-2dXW.ttf</string>
+        <string>dash_pixel-7.ttf</string>
+        <string>Atmosphere-Regular.ttf</string>
+        <string>Unipix.ttf</string>
+        <string>RousseauDeco.ttf</string>
+        <string>Monoton-Regular.ttf</string>
+        <string>PoiretOne-Regular.ttf</string>
+        <string>Fredoka-One.ttf</string>
+        <string>HACKED.ttf</string>
+        <string>DIGITAL-Regular.ttf</string>
+        <string>Creepster-Regular.ttf</string>
+        <string>Comic Sans MS Bold.ttf</string>
+        <string>LuckiestGuy-Regular.ttf</string>
+        <string>Roboto-BoldItalic.ttf</string>
+        <string>RobotoMono-Bold.ttf</string>
+        <string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -35,7 +35,7 @@ class ScreenBrightnessManager: NSObject {
 // 闪烁 屏幕
 extension ScreenBrightnessManager {
     func openBlingBlingActionStatus(isOpen: Bool) {
-        
+        ScreenBrightnessManager.defaultShared.currentLight = UIScreen.main.brightness
         if isOpen {
             addBlingBlingTimer()
         } else {
@@ -80,6 +80,7 @@ extension ScreenBrightnessManager {
 // 正弦函数 变化
 extension ScreenBrightnessManager {
     func openSinFlashActionStatus(isOpen: Bool) {
+        
         let manager = SASinWaveValueManager.defaultShared
         manager.displayLinkSinValueBlock = {[weak self] sinValue in
             guard let `self` = self else {return}
@@ -87,6 +88,7 @@ extension ScreenBrightnessManager {
         }
         
         if isOpen {
+            ScreenBrightnessManager.defaultShared.currentLight = UIScreen.main.brightness
             SASinWaveValueManager.defaultShared.addDisplayLink()
         } else {
             SASinWaveValueManager.defaultShared.removeDisplayLink()

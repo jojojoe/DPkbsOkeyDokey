@@ -18,10 +18,7 @@ class DPkbsSettingVC: UIViewController {
     
     let topBanner = UIView()
     var didlayoutOnce = Once()
-    let userCoinLabel = UILabel()
-    let purchaseBanner = UIView()
-    let coinCountLabel = UILabel()
-    let priceLabel = UILabel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -318,6 +318,8 @@ extension DPkbsPreviewVC {
         if contentTextFeid.isFirstResponder {
             contentTextFeid.resignFirstResponder()
         }
+        self.present(DPkbsSettingVC(), animated: true)
+        
     }
     
     @objc func hideButtonClick(sender: UIButton) {
