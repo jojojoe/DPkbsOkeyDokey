@@ -43,9 +43,9 @@ class DPbsPrivateTermsView: UIView {
         contentV.layer.cornerRadius = 12
         contentV.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(-40)
-            $0.width.equalTo(300)
-            $0.height.equalTo(450)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(450)
+            $0.height.equalTo(300)
             
         }
         //
@@ -65,7 +65,7 @@ class DPbsPrivateTermsView: UIView {
         let versionLabel = UILabel()
         versionLabel.fontName(14, "AppleSDGothicNeo-Bold")
             .color(.white)
-            .text("\(AppName.localized())-\("掌控每一分钟".localized())\n\("版本号".localized()):\(versionStr)")
+            .text("\("版本号".localized()):\(versionStr)")
             .textAlignment(.center)
             .adhere(toSuperview: contentV)
             .numberOfLines()
@@ -83,7 +83,7 @@ class DPbsPrivateTermsView: UIView {
             .adhere(toSuperview: contentV)
         contentInfoLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(30)
-            $0.top.equalTo(versionLabel.snp.bottom).offset(24)
+            $0.top.equalTo(versionLabel.snp.bottom).offset(14)
             $0.width.height.greaterThanOrEqualTo(10)
         }
         //
@@ -95,12 +95,22 @@ class DPbsPrivateTermsView: UIView {
             $0.width.greaterThanOrEqualTo(40)
             $0.height.greaterThanOrEqualTo(10)
         }
+        let andLabel = UILabel()
+        andLabel.adhere(toSuperview: contentV)
+            .text("&")
+            .fontName(12, "AppleSDGothicNeo-Regular")
+            .color(UIColor.white)
+        andLabel.snp.makeConstraints {
+            $0.centerY.equalTo(termsBtn.snp.centerY)
+            $0.left.equalTo(termsBtn.snp.right).offset(4)
+            $0.width.height.greaterThanOrEqualTo(10)
+        }
         
         let privateBtn = UIButton()
         privateBtn.adhere(toSuperview: contentV)
         privateBtn.snp.makeConstraints {
-            $0.top.equalTo(termsBtn.snp.bottom).offset(0)
-            $0.left.equalTo(termsBtn.snp.left)
+            $0.centerY.equalTo(termsBtn.snp.centerY).offset(0)
+            $0.left.equalTo(andLabel.snp.right).offset(4)
             $0.width.greaterThanOrEqualTo(40)
             $0.height.greaterThanOrEqualTo(10)
         }
@@ -127,8 +137,8 @@ class DPbsPrivateTermsView: UIView {
         contentLabel.adhere(toSuperview: contentV)
         contentLabel.isEditable = false
         contentLabel.snp.makeConstraints {
-            $0.left.equalTo(privateBtn.snp.left).offset(-4)
-            $0.top.equalTo(privateBtn.snp.bottom).offset(10)
+            $0.left.equalTo(termsBtn.snp.left)
+            $0.top.equalTo(termsBtn.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-70)
         }
