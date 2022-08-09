@@ -2,7 +2,7 @@
 //  DPkbsHorScrollAdjustView.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/19.
+//  Created by nataliya on 2022/4/19.
 //
 
 import UIKit

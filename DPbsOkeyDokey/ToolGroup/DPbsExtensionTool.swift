@@ -2,7 +2,7 @@
 //  DPbsExtensionTool.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit
@@ -268,6 +268,36 @@ public class Once {
     }
 }
 
+extension UIApplication {
+    @objc
+    public static var rootController: UIViewController? {
+        return shared.keyWindow?.rootViewController
+    }
+}
+
+public struct Alert {
+    public static func error(_ value: String?, title: String? = "Error", success: (() -> Void)? = nil) {
+        
+        HUD.hide()
+        Alertift
+            .alert(title: title, message: value)
+            .action(.cancel("OK"), handler: { _, _, _ in
+                success?()
+            })
+            .show(on: UIApplication.rootController?.visibleVC, completion: nil)
+    }
+
+    public static func message(_ value: String?, success: (() -> Void)? = nil) {
+        
+        HUD.hide()
+        Alertift
+            .alert(message: value)
+            .action(.cancel("OK"), handler: { _, _, _ in
+                success?()
+            })
+            .show(on: UIApplication.rootController?.visibleVC, completion: nil)
+    }
+}
 public struct HUD {
     public static func show() {
         guard !ZKProgressHUD.isShowing else { return }

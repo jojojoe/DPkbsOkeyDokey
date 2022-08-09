@@ -2,7 +2,7 @@
 //  SSLineWave.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/25.
+//  Created by nataliya on 2022/4/25.
 //
 
 import Foundation

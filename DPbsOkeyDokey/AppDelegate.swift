@@ -2,12 +2,16 @@
 //  AppDelegate.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit
 import AppTrackingTransparency
 import SnapKit
+import SwiftyStoreKit
+import TPInAppReceipt
+import StoreKit
+
 
 // com.feeddesign.igstorymaker
 // com.xx.test.888888
@@ -121,3 +125,47 @@ extension AppDelegate {
     
 }
 
+extension AppDelegate {
+    func setupIAP() {
+        SwiftyStoreKit.completeTransactions(atomically: true) {[weak self] purchases in
+            guard let `self` = self else {return}
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                @unknown default:
+                    break
+                }
+            }
+            self.checkSubscription()
+        }
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { (payment, product) -> Bool in
+            // TODO: Store page
+            return false
+        }
+        
+        
+    }
+
+    func checkSubscription() {
+        
+        TWPurchase.default.isPurchased { (status) in
+            debugPrint("current is in purchased \(status)")
+         
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: PurchaseNotificationKeys.success),
+                object: nil,
+                userInfo: nil
+            )
+        }
+         
+        
+    }
+}

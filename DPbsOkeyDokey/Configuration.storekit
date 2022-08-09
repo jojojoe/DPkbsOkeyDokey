@@ -1,0 +1,52 @@
+{
+  "identifier" : "EBA4A6A2",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "65D9EFCF",
+      "localizations" : [
+
+      ],
+      "name" : "OkeydoKey",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "F56202A2",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.superegg.timewidget.oneyear",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly Vip",
+          "subscriptionGroupID" : "65D9EFCF",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}

@@ -25,19 +25,22 @@ target 'DPbsOkeyDokey' do
   pod 'Pulsator'
   pod 'NoticeObserveKit'
 #  pod 'RainyRefreshControl'
+pod 'Defaults'
   
-  #objc
+  #  Store
+  pod 'SwiftyStoreKit'
+  pod 'TPInAppReceipt'
   
   
   #Firebase
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'Firebase/Analytics'
+#  pod 'Fabric'
+#  pod 'Crashlytics'
+#  pod 'Firebase/Analytics'
   
   #private
   pod 'Alison', :path => './'
 
-  #pod 'SEExtensions', :git => "https://github.com/jojojoe/SEExtension.git", :branch => "master"
+  #pod 'SEExtensions', :git => "https://github.com/nataliyajoe/SEExtension.git", :branch => "master"
   #pod 'Alison', :path => '../Alison'
   #pod 'FireAdverting'
   

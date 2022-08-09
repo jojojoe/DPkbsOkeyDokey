@@ -2,27 +2,39 @@
 //  DPkbsStoreVC.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit
 
 class DPkbsStoreVC: UIViewController {
-
+    let priceLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
+        TWPurchase.default.purchaseInfo { (products) in
+            debugPrint(products)
+            DispatchQueue.main.async {
+                [weak self] in
+                guard let `self` = self else {return}
+                self.updatePriceLabel(productItems: products)
+            }
+        }
     }
-    
-    
-    
-    
-    
 
+    func updatePriceLabel(productItems: [TWPurchase.IAPProduct]) {
+        if let yearProduct = productItems.first {
+            priceLabel.text = yearProduct.localizedPrice
+        }
+    }
 }
 
 extension DPkbsStoreVC {
+    
+    func fetchPrice() {
+        
+    }
+    
     func setupView() {
         view.backgroundColor(.clear)
         //
@@ -48,19 +60,20 @@ extension DPkbsStoreVC {
         iconImgV.layer.cornerRadius = 6
         iconImgV.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(20)
-            $0.width.height.equalTo(32)
+            $0.top.equalToSuperview().offset(0)
+            $0.left.equalToSuperview()
+            $0.height.equalTo(80)
         }
         
         //
-        let versionLabel = UILabel()
-        versionLabel.fontName(16, "AppleSDGothicNeo-Bold")
+        let vipInfo = UILabel()
+        vipInfo.fontName(16, "AppleSDGothicNeo-Bold")
             .color(.white)
             .text("\("加入会员".localized())")
             .textAlignment(.center)
             .adhere(toSuperview: contentV)
             
-        versionLabel.snp.makeConstraints {
+        vipInfo.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(iconImgV.snp.bottom).offset(12)
             $0.width.greaterThanOrEqualTo(1)
@@ -75,7 +88,7 @@ extension DPkbsStoreVC {
             .textAlignment(.center)
             .adhere(toSuperview: contentV)
             
-        versionLabel.snp.makeConstraints {
+        vipInfo1.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(iconImgV.snp.bottom).offset(12)
             $0.width.greaterThanOrEqualTo(1)
@@ -86,25 +99,34 @@ extension DPkbsStoreVC {
         let contentInfoLabel = UILabel()
         contentInfoLabel.fontName(15, "AppleSDGothicNeo-Bold")
             .color(.white)
-            .text("终身会员".localized())
+            .text("年会员".localized())
             .adhere(toSuperview: contentV)
         contentInfoLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview().offset(-40)
-            $0.top.equalTo(versionLabel.snp.bottom).offset(14)
+            $0.top.equalTo(vipInfo1.snp.bottom).offset(24)
             $0.width.height.greaterThanOrEqualTo(10)
         }
         //
         let priceStr = "$1.99"
-        let priceLabel = UILabel()
-        priceLabel.text(priceStr)'
-        priceLabel.fontName(15, "AppleSDGothicNeo-Bold")
-            .color(.white)
-            .text("终身会员".localized())
+        
+        priceLabel.fontName(15, "Avenir-HeavyOblique")
+            .color(UIColor(hexString: "#FECB42")!)
+            .text(priceStr)
             .adhere(toSuperview: contentV)
         priceLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview().offset(-40)
-            $0.top.equalTo(versionLabel.snp.bottom).offset(14)
+            $0.left.equalTo(contentInfoLabel.snp.right).offset(40)
+            $0.centerY.equalTo(contentInfoLabel.snp.centerY).offset(0)
             $0.width.height.greaterThanOrEqualTo(10)
+        }
+        
+        //
+        let priceLabelBgV = UIView()
+        priceLabelBgV.adhere(toSuperview: contentV)
+            .backgroundColor(UIColor.white)
+        priceLabelBgV.snp.makeConstraints {
+            $0.center.equalTo(priceLabel.snp.center)
+            $0.left.equalTo(priceLabel.snp.left).offset(-5)
+            $0.top.equalTo(priceLabel.snp.top).offset(-5)
         }
         
         

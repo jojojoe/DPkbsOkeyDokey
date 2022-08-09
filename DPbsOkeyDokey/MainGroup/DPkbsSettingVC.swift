@@ -2,7 +2,7 @@
 //  DPkbsSettingVC.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit

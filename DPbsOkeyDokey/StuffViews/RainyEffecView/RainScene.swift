@@ -2,7 +2,7 @@
 //  RainScene.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/5/26.
+//  Created by nataliya on 2022/5/26.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit
@@ -18,6 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         nav.isNavigationBarHidden = true
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+        
+        
+        
         
         #if DEBUG
         for fy in UIFont.familyNames {

@@ -2,13 +2,13 @@ let playScrollBtn = UIButton()//
 //  DPkbsPreviewVC.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/18.
+//  Created by nataliya on 2022/4/18.
 //
 
 import UIKit
 
 class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
-    
+    let storePageVC = DPkbsStoreVC()
     let settingBtn = UIButton()
     let textBgV = UIView()
     var effectBgV: DPkbsEffectView!
@@ -34,6 +34,7 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         view.clipsToBounds()
         registKeyboradNotification()
         setupView()
+        setupStorePage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -192,6 +193,7 @@ extension DPkbsPreviewVC {
             guard let `self` = self else {return}
             DispatchQueue.main.async {
                 self.updateBgEffect(styleItem: bgStyleItem)
+                self.showStoreVipPageStatus(styleItem: bgStyleItem)
             }
         }
         bgEffectBar.isHidden = true
@@ -523,6 +525,39 @@ extension DPkbsPreviewVC {
             self.updateScreenContent_canvasBgPhoto(photoStr: styleItem.bigImg)
         }
     }
+    
+    func showStoreVipPageStatus(styleItem: ODStyleItem) {
+        
+        if styleItem.iapId == "free" {
+            showStorePage(isShow: false)
+        } else {
+            if TWPurchase.default.inSubscription {
+                
+            }
+        }
+    }
+}
+
+extension DPkbsPreviewVC {
+    func setupStorePage() {
+        self.addChild(storePageVC)
+        self.view.addSubview(storePageVC.view)
+        storePageVC.view.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(360)
+            $0.height.equalTo(260)
+        }
+        storePageVC.view.isHidden = true
+    }
+    
+    func showStorePage(isShow: Bool) {
+        if isShow {
+            storePageVC.view.isHidden = false
+        } else {
+            storePageVC.view.isHidden = true
+        }
+    }
+    
 }
 
 extension DPkbsPreviewVC {

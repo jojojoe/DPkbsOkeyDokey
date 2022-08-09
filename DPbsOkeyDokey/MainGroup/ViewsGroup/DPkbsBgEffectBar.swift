@@ -2,7 +2,7 @@
 //  DPkbsBgEffectBar.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/6/2.
+//  Created by nataliya on 2022/6/2.
 //
 
 import UIKit

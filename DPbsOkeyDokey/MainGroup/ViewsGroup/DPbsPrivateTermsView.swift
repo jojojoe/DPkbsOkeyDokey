@@ -2,7 +2,7 @@
 //  DPbsPrivateTermsView.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/6/10.
+//  Created by nataliya on 2022/6/10.
 //
 
 import UIKit

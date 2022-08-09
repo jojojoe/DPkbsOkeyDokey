@@ -2,7 +2,7 @@
 //  ScreenBrightnessManager.swift
 //  DPbsOkeyDokey
 //
-//  Created by JOJO on 2022/4/24.
+//  Created by nataliya on 2022/4/24.
 //
 
 import Foundation
