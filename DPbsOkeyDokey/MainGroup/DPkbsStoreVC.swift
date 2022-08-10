@@ -12,7 +12,7 @@ class DPkbsStoreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        TWPurchase.default.purchaseInfo { (products) in
+        DPksOkeyPurchaseManager.default.purchaseInfo { (products) in
             debugPrint(products)
             DispatchQueue.main.async {
                 [weak self] in
@@ -22,7 +22,7 @@ class DPkbsStoreVC: UIViewController {
         }
     }
 
-    func updatePriceLabel(productItems: [TWPurchase.IAPProduct]) {
+    func updatePriceLabel(productItems: [DPksOkeyPurchaseManager.IAPProduct]) {
         if let yearProduct = productItems.first {
             priceLabel.text = yearProduct.localizedPrice
         }
@@ -46,11 +46,23 @@ extension DPkbsStoreVC {
         contentV.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
-            $0.width.equalTo(450)
-            $0.height.equalTo(300)
+            $0.left.top.equalToSuperview()
             
         }
-        
+        //
+        let vipInfo = UILabel()
+        vipInfo.fontName(18, "AppleSDGothicNeo-Bold")
+            .color(.white)
+            .text("\("加入会员".localized())")
+            .textAlignment(.center)
+            .adhere(toSuperview: contentV)
+            
+        vipInfo.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(30)
+            $0.width.greaterThanOrEqualTo(1)
+            $0.height.greaterThanOrEqualTo(1)
+        }
         //
         let iconImgV = UIImageView()
         iconImgV.adhere(toSuperview: contentV)
@@ -59,26 +71,13 @@ extension DPkbsStoreVC {
             .clipsToBounds()
         iconImgV.layer.cornerRadius = 6
         iconImgV.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(0)
+            $0.right.equalTo(vipInfo.snp.left).offset(-10)
+            $0.centerY.equalTo(vipInfo.snp.centerY).offset(0)
             $0.left.equalToSuperview()
-            $0.height.equalTo(80)
+            $0.height.equalTo(40)
         }
         
-        //
-        let vipInfo = UILabel()
-        vipInfo.fontName(16, "AppleSDGothicNeo-Bold")
-            .color(.white)
-            .text("\("加入会员".localized())")
-            .textAlignment(.center)
-            .adhere(toSuperview: contentV)
-            
-        vipInfo.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(iconImgV.snp.bottom).offset(12)
-            $0.width.greaterThanOrEqualTo(1)
-            $0.height.greaterThanOrEqualTo(1)
-        }
+        
         
         //
         let vipInfo1 = UILabel()
@@ -90,7 +89,7 @@ extension DPkbsStoreVC {
             
         vipInfo1.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(iconImgV.snp.bottom).offset(12)
+            $0.top.equalTo(vipInfo.snp.bottom).offset(22)
             $0.width.greaterThanOrEqualTo(1)
             $0.height.greaterThanOrEqualTo(1)
         }
@@ -107,10 +106,14 @@ extension DPkbsStoreVC {
             $0.width.height.greaterThanOrEqualTo(10)
         }
         //
+        let priceLabelBgV = UIView()
+        priceLabelBgV.adhere(toSuperview: contentV)
+            .backgroundColor(UIColor(hexString: "#FECB42")!)
+        priceLabelBgV.layer.cornerRadius = 8
+        //
         let priceStr = "$1.99"
-        
         priceLabel.fontName(15, "Avenir-HeavyOblique")
-            .color(UIColor(hexString: "#FECB42")!)
+            .color(UIColor.white)
             .text(priceStr)
             .adhere(toSuperview: contentV)
         priceLabel.snp.makeConstraints {
@@ -120,9 +123,7 @@ extension DPkbsStoreVC {
         }
         
         //
-        let priceLabelBgV = UIView()
-        priceLabelBgV.adhere(toSuperview: contentV)
-            .backgroundColor(UIColor.white)
+        
         priceLabelBgV.snp.makeConstraints {
             $0.center.equalTo(priceLabel.snp.center)
             $0.left.equalTo(priceLabel.snp.left).offset(-5)

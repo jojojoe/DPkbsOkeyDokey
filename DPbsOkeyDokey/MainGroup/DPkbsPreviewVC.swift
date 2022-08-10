@@ -531,8 +531,10 @@ extension DPkbsPreviewVC {
         if styleItem.iapId == "free" {
             showStorePage(isShow: false)
         } else {
-            if TWPurchase.default.inSubscription {
-                
+            if DPksOkeyPurchaseManager.default.inSubscription {
+                showStorePage(isShow: false)
+            } else {
+                showStorePage(isShow: true)
             }
         }
     }
@@ -543,9 +545,11 @@ extension DPkbsPreviewVC {
         self.addChild(storePageVC)
         self.view.addSubview(storePageVC.view)
         storePageVC.view.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.equalTo(360)
-            $0.height.equalTo(260)
+            
+            $0.centerY.equalToSuperview().offset(-50)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
+            $0.height.equalTo(160)
         }
         storePageVC.view.isHidden = true
     }

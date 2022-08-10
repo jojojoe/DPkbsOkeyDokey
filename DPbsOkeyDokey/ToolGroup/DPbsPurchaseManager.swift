@@ -20,8 +20,8 @@ struct PurchaseNotificationKeys {
 }
 
 
-public class TWPurchase {
-    public static var `default` = TWPurchase()
+public class DPksOkeyPurchaseManager {
+    public static var `default` = DPksOkeyPurchaseManager()
     let verifyProductSharedSecret = "efec92078b704f6ba3f5a71ac73e80d4"
     var test: Bool = false
     public var receiptInfo: ReceiptInfo? {
@@ -64,7 +64,7 @@ public class TWPurchase {
     var inSubscription: Bool = false
    
 
-    public func purchaseInfo(block: @escaping (([TWPurchase.IAPProduct]) -> Void)) {
+    public func purchaseInfo(block: @escaping (([DPksOkeyPurchaseManager.IAPProduct]) -> Void)) {
         let iapList = iapTypeList.map { $0.rawValue }
         retrieveProductsInfo(iapList: iapList) { items in
             block(items)
@@ -224,7 +224,7 @@ public class TWPurchase {
 //    }
 }
 
-public extension TWPurchase {
+public extension DPksOkeyPurchaseManager {
     // main method to check if purchased anything
     func isPurchased(completion: @escaping (_ purchased: Bool) -> Void) {
         let dispatchGroup = DispatchGroup()
@@ -286,11 +286,10 @@ public extension TWPurchase {
         
         dispatchGroup.notify(queue: .main) {
             let hasValid = validPurchases.count > 0
-            TWPurchase.default.inSubscription = hasValid
+            DPksOkeyPurchaseManager.default.inSubscription = hasValid
             completion(hasValid)
         }
     }
-    
     
     func verifyPurchase(
         _ purchase: IAPType,
@@ -415,7 +414,7 @@ public extension TWPurchase {
     }
 }
 
-public extension TWPurchase {
+public extension DPksOkeyPurchaseManager {
     struct IAPProduct: Codable {
         public var iapID: String
         public var price: Double
@@ -435,7 +434,7 @@ public extension TWPurchase {
     /// 获取多项价格(maybe sync)
     func retrieveProductsInfo(iapList: [String],
                               completion: @escaping (([IAPProduct]) -> Void)) {
-        let oldLocalList = TWPurchase.localIAPProducts ?? []
+        let oldLocalList = DPksOkeyPurchaseManager.localIAPProducts ?? []
         let localIAPIDList = oldLocalList.compactMap { $0.iapID }
         if localIAPIDList.contains(iapList) {
             completion(oldLocalList)
@@ -443,7 +442,7 @@ public extension TWPurchase {
         }
         SwiftyStoreKit.retrieveProductsInfo(Set(iapList)) { result in
             let priceList = result.retrievedProducts.compactMap { $0 }
-            let localList = priceList.compactMap { TWPurchase.IAPProduct(iapID: $0.productIdentifier, price: $0.price.doubleValue, priceLocale: $0.priceLocale, localizedPrice: $0.localizedPrice, currencyCode: $0.priceLocale.currencyCode) }
+            let localList = priceList.compactMap { DPksOkeyPurchaseManager.IAPProduct(iapID: $0.productIdentifier, price: $0.price.doubleValue, priceLocale: $0.priceLocale, localizedPrice: $0.localizedPrice, currencyCode: $0.priceLocale.currencyCode) }
 
             var tempItems = localList
             for iapItem in oldLocalList {
@@ -452,8 +451,8 @@ public extension TWPurchase {
                     tempItems.append(iapItem)
                 }
             }
-            TWPurchase.localIAPProducts = tempItems
-            TWPurchase.localIAPCacheTime = Date().unixTimestamp
+            DPksOkeyPurchaseManager.localIAPProducts = tempItems
+            DPksOkeyPurchaseManager.localIAPCacheTime = Date().unixTimestamp
             completion(tempItems)
         }
     }
@@ -469,7 +468,7 @@ public extension TWPurchase {
 
 extension Defaults.Keys {
     static let localIAPReceiptInfo = Key<Data?>("localIAPReceiptInfo")
-    static let localIAPProducts = Key<[TWPurchase.IAPProduct]?>("LocalIAPProducts")
+    static let localIAPProducts = Key<[DPksOkeyPurchaseManager.IAPProduct]?>("LocalIAPProducts")
     static let localIAPCacheTime = Key<TimeInterval?>("LocalIAPCacheTime")
 }
 

@@ -156,7 +156,7 @@ extension AppDelegate {
 
     func checkSubscription() {
         
-        TWPurchase.default.isPurchased { (status) in
+        DPksOkeyPurchaseManager.default.isPurchased { (status) in
             debugPrint("current is in purchased \(status)")
          
             NotificationCenter.default.post(
