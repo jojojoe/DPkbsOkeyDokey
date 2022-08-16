@@ -22,7 +22,7 @@ struct PurchaseNotificationKeys {
 
 public class DPksOkeyPurchaseManager {
     public static var `default` = DPksOkeyPurchaseManager()
-    let verifyProductSharedSecret = "efec92078b704f6ba3f5a71ac73e80d4"
+//    let verifyProductSharedSecret = "efec92078b704f6ba3f5a71ac73e80d4"
     var test: Bool = false
     public var receiptInfo: ReceiptInfo? {
         set {

@@ -2,7 +2,7 @@
     
     {
         "templateId": "c1",
-        "iapId": "",
+        "iapId": "free",
         "bgEffect" : "#000000",
         "textColorStr" : "#FFFFFF",
         "thumbImg" : "bg_color_1",
@@ -10,7 +10,7 @@
     },
     {
         "templateId": "c2",
-        "iapId": "",
+        "iapId": "free",
         "bgEffect" : "#FFFFFF",
         "textColorStr" : "#000000",
         "thumbImg" : "bg_color_2",

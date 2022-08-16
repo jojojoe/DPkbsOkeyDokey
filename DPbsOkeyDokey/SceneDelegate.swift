@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AppTrackingTransparency
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -32,6 +32,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         #endif
     }
     
+    func appTrackingPermission() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if #available(iOS 14, *) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    
+                })
+            } else {
+                
+            }
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
          
         guard let _ = (scene as? UIWindowScene) else { return }
@@ -42,9 +54,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidDisconnect(_ scene: UIScene) {
          
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
-         
+        appTrackingPermission()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

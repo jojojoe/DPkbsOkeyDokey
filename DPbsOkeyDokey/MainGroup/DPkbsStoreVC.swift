@@ -31,10 +31,7 @@ class DPkbsStoreVC: UIViewController {
 
 extension DPkbsStoreVC {
     
-    func fetchPrice() {
-        
-    }
-    
+   
     func setupView() {
         view.backgroundColor(.clear)
         //
@@ -49,33 +46,6 @@ extension DPkbsStoreVC {
             $0.left.top.equalToSuperview()
             
         }
-        //
-        let vipInfo = UILabel()
-        vipInfo.fontName(18, "AppleSDGothicNeo-Bold")
-            .color(.white)
-            .text("\("加入会员".localized())")
-            .textAlignment(.center)
-            .adhere(toSuperview: contentV)
-            
-        vipInfo.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(30)
-            $0.width.greaterThanOrEqualTo(1)
-            $0.height.greaterThanOrEqualTo(1)
-        }
-        //
-        let iconImgV = UIImageView()
-        iconImgV.adhere(toSuperview: contentV)
-            .contentMode(.scaleAspectFit)
-            .image("appicon")
-            .clipsToBounds()
-        iconImgV.layer.cornerRadius = 6
-        iconImgV.snp.makeConstraints {
-            $0.right.equalTo(vipInfo.snp.left).offset(-10)
-            $0.centerY.equalTo(vipInfo.snp.centerY).offset(0)
-            $0.left.equalToSuperview()
-            $0.height.equalTo(40)
-        }
         
         
         
@@ -89,7 +59,7 @@ extension DPkbsStoreVC {
             
         vipInfo1.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(vipInfo.snp.bottom).offset(22)
+            $0.top.equalToSuperview().offset(30)
             $0.width.greaterThanOrEqualTo(1)
             $0.height.greaterThanOrEqualTo(1)
         }
@@ -108,12 +78,13 @@ extension DPkbsStoreVC {
         //
         let priceLabelBgV = UIView()
         priceLabelBgV.adhere(toSuperview: contentV)
-            .backgroundColor(UIColor(hexString: "#FECB42")!)
-        priceLabelBgV.layer.cornerRadius = 8
+            .backgroundColor(UIColor.clear)
+//            .backgroundColor(UIColor(hexString: "#FECB42")!)
+//        priceLabelBgV.layer.cornerRadius = 8
         //
         let priceStr = "$1.99"
         priceLabel.fontName(15, "Avenir-HeavyOblique")
-            .color(UIColor.white)
+            .color(UIColor(hexString: "#FECB42")!)
             .text(priceStr)
             .adhere(toSuperview: contentV)
         priceLabel.snp.makeConstraints {
@@ -121,17 +92,60 @@ extension DPkbsStoreVC {
             $0.centerY.equalTo(contentInfoLabel.snp.centerY).offset(0)
             $0.width.height.greaterThanOrEqualTo(10)
         }
-        
         //
-        
         priceLabelBgV.snp.makeConstraints {
             $0.center.equalTo(priceLabel.snp.center)
             $0.left.equalTo(priceLabel.snp.left).offset(-5)
             $0.top.equalTo(priceLabel.snp.top).offset(-5)
         }
+        //
+        let vipInfo = UIButton()
+        vipInfo.font(18, "AppleSDGothicNeo-Bold")
+            .titleColor(.white)
+            .adhere(toSuperview: contentV)
+            .title("\("  ")\("立即加入".localized())\(" ")")
+            .image(UIImage(named: "appicon"))
+            .backgroundColor(UIColor(hexString: "#FECB42")!)
+        vipInfo.layer.cornerRadius = 20
+        vipInfo.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(contentInfoLabel.snp.bottom).offset(18)
+            $0.width.greaterThanOrEqualTo(200)
+            $0.height.greaterThanOrEqualTo(40)
+        }
+        vipInfo.addTarget(self, action: #selector(vipPurchaseClick(sender: )), for: .touchUpInside)
+        
+        //
+        let purchaseInfoUrlBtn = UIButton()
+        purchaseInfoUrlBtn.adhere(toSuperview: contentV)
+        purchaseInfoUrlBtn.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.width.equalTo(200)
+            $0.height.equalTo(35)
+        }
+        purchaseInfoUrlBtn.addTarget(self, action: #selector(purchaseInfoUrlBtnClick(sender: )), for: .touchUpInside)
+        //
+        let attri = NSAttributedString(string: "Purchase Info", attributes: [NSAttributedString.Key.font : UIFont(name: "AvenirNext-MediumItalic", size: 13)!, NSAttributedString.Key.foregroundColor : UIColor(hexString: "#E5FF7E")!, NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor : UIColor(hexString: "#E5FF7E")!])
+        purchaseInfoUrlBtn.setAttributedTitle(attri, for: .normal)
         
         
-        
+    }
+    
+    @objc func purchaseInfoUrlBtnClick(sender: UIButton) {
+        debugPrint("info link")
+    }
+    
+    @objc func vipPurchaseClick(sender: UIButton) {
+        debugPrint("vipPurchase")
+        DPksOkeyPurchaseManager.default.order(iapType: .year, source: "") {
+            [weak self] in
+            guard let `self` = self else {return}
+            DispatchQueue.main.async {
+                
+                self.view.isHidden = true
+            }
+        }
     }
     
     

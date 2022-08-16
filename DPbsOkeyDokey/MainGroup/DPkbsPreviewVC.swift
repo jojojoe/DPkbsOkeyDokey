@@ -86,6 +86,13 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
 }
 
 extension DPkbsPreviewVC {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.sendBtnClick(sender: sendBtn)
+        return true
+    }
+}
+
+extension DPkbsPreviewVC {
     
     func registKeyboradNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification , object:nil)
@@ -229,6 +236,7 @@ extension DPkbsPreviewVC {
         contentTextFeid.textColor = .black
         contentTextFeid.backgroundColor = .white
         contentTextFeid.inputAccessoryView = toolView
+        contentTextFeid.returnKeyType = .send
         contentTextFeid.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 14)
         toolView.addSubview(contentTextFeid)
         
@@ -545,11 +553,10 @@ extension DPkbsPreviewVC {
         self.addChild(storePageVC)
         self.view.addSubview(storePageVC.view)
         storePageVC.view.snp.makeConstraints {
-            
-            $0.centerY.equalToSuperview().offset(-50)
+            $0.centerY.equalToSuperview().offset(-40)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(300)
-            $0.height.equalTo(160)
+            $0.height.equalTo(190)
         }
         storePageVC.view.isHidden = true
     }

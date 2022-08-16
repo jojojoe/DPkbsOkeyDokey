@@ -90,6 +90,7 @@ extension DPkbsBgEffectBar: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentDanweiIndex = row
         collection.reloadData()
+        
     }
     
 }
@@ -168,10 +169,13 @@ extension DPkbsBgEffectBar: UICollectionViewDelegate {
         currentSelectItem = item
         if currentDanweiIndex == 0 {
             item = DPbsManager.default.styleList_effect[indexPath.item]
+            currentSelectItem = item
         } else if currentDanweiIndex == 1 {
             item = DPbsManager.default.styleList_color[indexPath.item]
+            currentSelectItem = item
         } else if currentDanweiIndex == 2 {
             item = DPbsManager.default.styleList_photo[indexPath.item]
+            currentSelectItem = item
         }
         
         didSelectBlock?(item)
