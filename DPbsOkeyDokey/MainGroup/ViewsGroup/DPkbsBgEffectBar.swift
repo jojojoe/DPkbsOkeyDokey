@@ -58,7 +58,7 @@ class DPkbsBgEffectBar: UIView {
             $0.left.equalToSuperview().offset(80)
         }
         collection.register(cellWithClass: ASCgymBgEffectCell.self)
-        
+        collection.clipsToBounds = false
     }
 
     
@@ -118,6 +118,12 @@ extension DPkbsBgEffectBar: UICollectionViewDataSource {
             cell.selectV.isHidden = false
         } else {
             cell.selectV.isHidden = true
+        }
+        
+        if indexPath.item >= 2 {
+            cell.provipImgV.isHidden = false
+        } else {
+            cell.provipImgV.isHidden = true
         }
         
         return cell
@@ -192,7 +198,7 @@ extension DPkbsBgEffectBar: UICollectionViewDelegate {
 class ASCgymBgEffectCell: UICollectionViewCell {
     let bgImgV = UIImageView()
     let selectV = UIView()
-    
+    let provipImgV = UIImageView()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -222,6 +228,18 @@ class ASCgymBgEffectCell: UICollectionViewCell {
         selectV.snp.makeConstraints {
             $0.left.right.top.bottom.equalToSuperview()
         }
+        
+        provipImgV.adhere(toSuperview: contentView)
+            .image("vippro")
+            .contentMode(.scaleAspectFit)
+        provipImgV.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-4)
+            $0.right.equalToSuperview().offset(4)
+            $0.width.equalTo(32/2)
+            $0.height.equalTo(26/2)
+        }
+        
+        
     }
 }
 
