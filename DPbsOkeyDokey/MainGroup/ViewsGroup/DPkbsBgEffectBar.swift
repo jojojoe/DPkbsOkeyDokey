@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyStoreKit
 
 class DPkbsBgEffectBar: UIView {
     
@@ -20,10 +21,20 @@ class DPkbsBgEffectBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        addnofification()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addnofification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(purchaseSuccess(nofi: )), name: NSNotification.Name(rawValue: PurchaseNotificationKeys.success), object: nil)
+   
+    }
+    
+    func purchaseSuccess(nofi: NotificationCenter) {
+        collection.reloadData()
     }
     
     func setupView() {
@@ -119,12 +130,16 @@ extension DPkbsBgEffectBar: UICollectionViewDataSource {
         } else {
             cell.selectV.isHidden = true
         }
-        
-        if indexPath.item >= 2 {
-            cell.provipImgV.isHidden = false
-        } else {
+        if DPksOkeyPurchaseManager.default.inSubscription {
             cell.provipImgV.isHidden = true
+        } else {
+            if indexPath.item >= 2 {
+                cell.provipImgV.isHidden = false
+            } else {
+                cell.provipImgV.isHidden = true
+            }
         }
+        
         
         return cell
     }
