@@ -6,6 +6,7 @@ let playScrollBtn = UIButton()//
 //
 
 import UIKit
+import ZKProgressHUD
 
 class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
     let storePageVC = DPkbsStoreVC()
@@ -33,10 +34,14 @@ class DPkbsPreviewVC: UIViewController, UITextFieldDelegate {
         view.backgroundColor(.white)
         view.clipsToBounds()
         registKeyboradNotification()
+        addnofification()
         setupView()
         setupStorePage()
     }
     
+    deinit {
+        self.removeNotificationsObserver()
+    }
     override func viewDidLayoutSubviews() {
         
         viewDidLayoutOnce.run {
@@ -126,6 +131,15 @@ extension DPkbsPreviewVC {
         }
         debugPrint(keyboardHeight)
     }
+    
+    func addnofification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(purchaseSuccess(nofi: )), name: NSNotification.Name(rawValue: PurchaseNotificationKeys.success), object: nil)
+   
+    }
+    
+    @objc func purchaseSuccess(nofi: NotificationCenter) {
+//        ZKProgressHUD.showSuccess("恭喜你成为我们的会员!")
+    }
 }
 
 extension DPkbsPreviewVC {
@@ -169,9 +183,21 @@ extension DPkbsPreviewVC {
         textScrollView.scrollView.tapClickViewActionBlock = {
             [weak self] in
             guard let `self` = self else {return}
-            if self.contentTextFeid.isFirstResponder {
-                self.contentTextFeid.resignFirstResponder()
+            DispatchQueue.main.async {
+                if self.contentTextFeid.isFirstResponder {
+                    self.contentTextFeid.resignFirstResponder()
+                }
+                //
+                
+                
+                if self.fontBtn.isSelected {
+                    self.textFontBtnClick(sender: self.fontBtn)
+                }
+                if self.bgEffectBtn.isSelected {
+                    self.bgEffectBtnClick(sender: self.bgEffectBtn)
+                }
             }
+            
         }
         
         

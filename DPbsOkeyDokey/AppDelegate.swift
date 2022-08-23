@@ -12,8 +12,10 @@ import SwiftyStoreKit
 import TPInAppReceipt
 import StoreKit
 
+// 添加中文和日文字体 多国文字校对
 
-// com.feeddesign.igstorymaker
+// 描述 关键字 配置链接 后台填充
+//
 // com.xx.test.888888
 let AppName: String = "InstaMate"
 let purchaseUrl = ""
@@ -34,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupIAP()
-        registerNotifications(application)
+//        registerNotifications(application)
          
         return true
     }
@@ -145,7 +147,7 @@ extension AppDelegate {
             }
             self.checkSubscription()
         }
-        
+        self.checkSubscription()
         SwiftyStoreKit.shouldAddStorePaymentHandler = { (payment, product) -> Bool in
             // TODO: Store page
             return false

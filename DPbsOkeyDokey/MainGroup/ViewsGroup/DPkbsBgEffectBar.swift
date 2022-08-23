@@ -33,7 +33,7 @@ class DPkbsBgEffectBar: UIView {
    
     }
     
-    func purchaseSuccess(nofi: NotificationCenter) {
+    @objc func purchaseSuccess(nofi: NotificationCenter) {
         collection.reloadData()
     }
     

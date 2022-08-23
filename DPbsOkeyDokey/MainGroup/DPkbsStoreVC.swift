@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ZKProgressHUD
 class DPkbsStoreVC: UIViewController {
     let priceLabel = UILabel()
     override func viewDidLoad() {
@@ -142,7 +142,7 @@ extension DPkbsStoreVC {
             [weak self] in
             guard let `self` = self else {return}
             DispatchQueue.main.async {
-                
+                ZKProgressHUD.showSuccess("恭喜你成为我们的会员!")
                 self.view.isHidden = true
             }
         }
