@@ -14,7 +14,7 @@ import StoreKit
 
 // 添加中文和日文字体 多国文字校对
 
-// 描述 关键字 配置链接 后台填充
+// 描述 关键字 配置链接 宣传图 后台填充
 //
 // com.xx.test.888888
 let AppName: String = "InstaMate"
