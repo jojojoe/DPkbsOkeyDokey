@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		950F654D2F3BB1BD701FDC82 /* Pods_DPbsOkeyDokey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5571ED003B72EA76F0F2A52 /* Pods_DPbsOkeyDokey.framework */; };
+		D806B1AE28B6643B00FE7301 /* Kokoro.otf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1A728B6643A00FE7301 /* Kokoro.otf */; };
+		D806B1AF28B6643B00FE7301 /* FC勘亭流江戸文字.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1A828B6643A00FE7301 /* FC勘亭流江戸文字.ttf */; };
+		D806B1B028B6643B00FE7301 /* 懐石体id-isi-light.ttc in Resources */ = {isa = PBXBuildFile; fileRef = D806B1A928B6643A00FE7301 /* 懐石体id-isi-light.ttc */; };
+		D806B1B128B6643B00FE7301 /* JKG-M_3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1AA28B6643A00FE7301 /* JKG-M_3.ttf */; };
+		D806B1B228B6643B00FE7301 /* Pigmo-00.otf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1AB28B6643A00FE7301 /* Pigmo-00.otf */; };
+		D806B1B328B6643B00FE7301 /* suusiki.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1AC28B6643A00FE7301 /* suusiki.ttf */; };
+		D806B1B428B6643B00FE7301 /* mini-wakuwaku.otf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1AD28B6643A00FE7301 /* mini-wakuwaku.otf */; };
+		D806B1BB28B6644200FE7301 /* 华文行楷.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D806B1B528B6644200FE7301 /* 华文行楷.TTF */; };
+		D806B1BC28B6644200FE7301 /* 书体坊雪纯体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D806B1B628B6644200FE7301 /* 书体坊雪纯体.TTF */; };
+		D806B1BD28B6644200FE7301 /* 华文琥珀.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D806B1B728B6644200FE7301 /* 华文琥珀.TTF */; };
+		D806B1BE28B6644200FE7301 /* 胡敬礼毛笔粗行简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D806B1B828B6644200FE7301 /* 胡敬礼毛笔粗行简.ttf */; };
+		D806B1BF28B6644200FE7301 /* 新蒂小丸子小学版.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D806B1B928B6644200FE7301 /* 新蒂小丸子小学版.TTF */; };
+		D806B1C028B6644200FE7301 /* 书体坊禚效锋行草体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D806B1BA28B6644200FE7301 /* 书体坊禚效锋行草体.TTF */; };
 		EB00457928163D6700645EB1 /* SSLineWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00457828163D6700645EB1 /* SSLineWave.swift */; };
 		EB21CF202852F5730036B705 /* DPbsPrivateTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB21CF1F2852F5730036B705 /* DPbsPrivateTermsView.swift */; };
 		EB39136A280EBAC1007D77FE /* DPkbsHorScrollPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */; };
@@ -75,6 +88,19 @@
 		3A07C45520447577345E00ED /* Pods-DPbsOkeyDokey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPbsOkeyDokey.debug.xcconfig"; path = "Target Support Files/Pods-DPbsOkeyDokey/Pods-DPbsOkeyDokey.debug.xcconfig"; sourceTree = "<group>"; };
 		5CCDA73006CCFB45E80F06D5 /* Pods-DPbsOkeyDokey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPbsOkeyDokey.release.xcconfig"; path = "Target Support Files/Pods-DPbsOkeyDokey/Pods-DPbsOkeyDokey.release.xcconfig"; sourceTree = "<group>"; };
 		D5571ED003B72EA76F0F2A52 /* Pods_DPbsOkeyDokey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPbsOkeyDokey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D806B1A728B6643A00FE7301 /* Kokoro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kokoro.otf; sourceTree = "<group>"; };
+		D806B1A828B6643A00FE7301 /* FC勘亭流江戸文字.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FC勘亭流江戸文字.ttf"; sourceTree = "<group>"; };
+		D806B1A928B6643A00FE7301 /* 懐石体id-isi-light.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "懐石体id-isi-light.ttc"; sourceTree = "<group>"; };
+		D806B1AA28B6643A00FE7301 /* JKG-M_3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JKG-M_3.ttf"; sourceTree = "<group>"; };
+		D806B1AB28B6643A00FE7301 /* Pigmo-00.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pigmo-00.otf"; sourceTree = "<group>"; };
+		D806B1AC28B6643A00FE7301 /* suusiki.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suusiki.ttf; sourceTree = "<group>"; };
+		D806B1AD28B6643A00FE7301 /* mini-wakuwaku.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mini-wakuwaku.otf"; sourceTree = "<group>"; };
+		D806B1B528B6644200FE7301 /* 华文行楷.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文行楷.TTF"; sourceTree = "<group>"; };
+		D806B1B628B6644200FE7301 /* 书体坊雪纯体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "书体坊雪纯体.TTF"; sourceTree = "<group>"; };
+		D806B1B728B6644200FE7301 /* 华文琥珀.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文琥珀.TTF"; sourceTree = "<group>"; };
+		D806B1B828B6644200FE7301 /* 胡敬礼毛笔粗行简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "胡敬礼毛笔粗行简.ttf"; sourceTree = "<group>"; };
+		D806B1B928B6644200FE7301 /* 新蒂小丸子小学版.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "新蒂小丸子小学版.TTF"; sourceTree = "<group>"; };
+		D806B1BA28B6644200FE7301 /* 书体坊禚效锋行草体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "书体坊禚效锋行草体.TTF"; sourceTree = "<group>"; };
 		EB00457828163D6700645EB1 /* SSLineWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLineWave.swift; sourceTree = "<group>"; };
 		EB21CF1F2852F5730036B705 /* DPbsPrivateTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPbsPrivateTermsView.swift; sourceTree = "<group>"; };
 		EB391369280EBAC1007D77FE /* DPkbsHorScrollPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsHorScrollPreview.swift; sourceTree = "<group>"; };
@@ -169,6 +195,33 @@
 				5CCDA73006CCFB45E80F06D5 /* Pods-DPbsOkeyDokey.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D806B1A528B65A7600FE7301 /* Font_zh */ = {
+			isa = PBXGroup;
+			children = (
+				D806B1B828B6644200FE7301 /* 胡敬礼毛笔粗行简.ttf */,
+				D806B1B728B6644200FE7301 /* 华文琥珀.TTF */,
+				D806B1B528B6644200FE7301 /* 华文行楷.TTF */,
+				D806B1B628B6644200FE7301 /* 书体坊雪纯体.TTF */,
+				D806B1BA28B6644200FE7301 /* 书体坊禚效锋行草体.TTF */,
+				D806B1B928B6644200FE7301 /* 新蒂小丸子小学版.TTF */,
+			);
+			path = Font_zh;
+			sourceTree = "<group>";
+		};
+		D806B1A628B65A8400FE7301 /* Font_jp */ = {
+			isa = PBXGroup;
+			children = (
+				D806B1A928B6643A00FE7301 /* 懐石体id-isi-light.ttc */,
+				D806B1A828B6643A00FE7301 /* FC勘亭流江戸文字.ttf */,
+				D806B1AA28B6643A00FE7301 /* JKG-M_3.ttf */,
+				D806B1A728B6643A00FE7301 /* Kokoro.otf */,
+				D806B1AD28B6643A00FE7301 /* mini-wakuwaku.otf */,
+				D806B1AB28B6643A00FE7301 /* Pigmo-00.otf */,
+				D806B1AC28B6643A00FE7301 /* suusiki.ttf */,
+			);
+			path = Font_jp;
 			sourceTree = "<group>";
 		};
 		EB391299280E635B007D77FE /* ViewsGroup */ = {
@@ -284,6 +337,8 @@
 		EBD60229280D024B001CDF3B /* DPbsOkeyDokey */ = {
 			isa = PBXGroup;
 			children = (
+				D806B1A628B65A8400FE7301 /* Font_jp */,
+				D806B1A528B65A7600FE7301 /* Font_zh */,
 				EB9E1932287C006300332DD3 /* Font_en */,
 				EB986D9D280D5706008F3340 /* StuffViews */,
 				EBD60246280D3CFA001CDF3B /* ToolGroup */,
@@ -400,28 +455,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806B1BF28B6644200FE7301 /* 新蒂小丸子小学版.TTF in Resources */,
 				EB9E1955287C006300332DD3 /* Fredoka-One.ttf in Resources */,
+				D806B1B328B6643B00FE7301 /* suusiki.ttf in Resources */,
 				EB9E194B287C006300332DD3 /* Montserrat-Bold.ttf in Resources */,
 				EBC5ED082815293200F42093 /* FontPointSizeList.json in Resources */,
+				D806B1C028B6644200FE7301 /* 书体坊禚效锋行草体.TTF in Resources */,
 				EB3D0968283F80B8001E1EB3 /* spark.png in Resources */,
+				D806B1AE28B6643B00FE7301 /* Kokoro.otf in Resources */,
 				EB9E1946287C006300332DD3 /* HACKED.ttf in Resources */,
+				D806B1BE28B6644200FE7301 /* 胡敬礼毛笔粗行简.ttf in Resources */,
+				D806B1B028B6643B00FE7301 /* 懐石体id-isi-light.ttc in Resources */,
 				EB9E1951287C006300332DD3 /* Roboto-BoldItalic.ttf in Resources */,
 				EB985CFB28489767004F3675 /* DPfont_jp.json in Resources */,
 				EB9E1953287C006300332DD3 /* NbpInformaFivesix-2dXW.ttf in Resources */,
 				EB985CF92848636B004F3675 /* DPfont_en.json in Resources */,
+				D806B1B128B6643B00FE7301 /* JKG-M_3.ttf in Resources */,
 				EB3D0966283F7CCA001E1EB3 /* rain.sks in Resources */,
 				EB9E194D287C006300332DD3 /* Creepster-Regular.ttf in Resources */,
 				EB9E1948287C006300332DD3 /* SignusDigitalSquareNbp-q8Dd.ttf in Resources */,
 				EB9E1957287C006300332DD3 /* DIGITAL-Regular.ttf in Resources */,
+				D806B1B228B6643B00FE7301 /* Pigmo-00.otf in Resources */,
+				D806B1B428B6643B00FE7301 /* mini-wakuwaku.otf in Resources */,
 				EBC5ED0C2815324C00F42093 /* SpeedList.json in Resources */,
 				EBD60237280D024E001CDF3B /* LaunchScreen.storyboard in Resources */,
 				EB9E1952287C006300332DD3 /* Monoton-Regular.ttf in Resources */,
 				EB9E1954287C006300332DD3 /* RobotoMono-Bold.ttf in Resources */,
 				EB9E194F287C006300332DD3 /* LuckiestGuy-Regular.ttf in Resources */,
 				EBD60234280D024E001CDF3B /* Assets.xcassets in Resources */,
+				D806B1BC28B6644200FE7301 /* 书体坊雪纯体.TTF in Resources */,
 				EB985CF728486344004F3675 /* DPfont_zh.json in Resources */,
+				D806B1AF28B6643B00FE7301 /* FC勘亭流江戸文字.ttf in Resources */,
 				EB9E1958287C006300332DD3 /* Atmosphere-Regular.ttf in Resources */,
 				EB9E1956287C006300332DD3 /* Comic Sans MS Bold.ttf in Resources */,
+				D806B1BB28B6644200FE7301 /* 华文行楷.TTF in Resources */,
 				EB9E194C287C006300332DD3 /* SanstainaRegular-52e8.ttf in Resources */,
 				EB9E1950287C006300332DD3 /* Unipix.ttf in Resources */,
 				EBD60232280D024B001CDF3B /* Main.storyboard in Resources */,
@@ -433,6 +500,7 @@
 				EB985CFF2848A449004F3675 /* StyleTemplateList_effect.json in Resources */,
 				EB985D012848B5B7004F3675 /* StyleTemplateList_photo.json in Resources */,
 				EBD6024C280D3EC6001CDF3B /* StyleTemplateList_color.json in Resources */,
+				D806B1BD28B6644200FE7301 /* 华文琥珀.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

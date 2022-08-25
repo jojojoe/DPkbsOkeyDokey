@@ -113,6 +113,31 @@ class DPbsManager: NSObject {
      */
 }
 
+extension DPbsManager {
+    func customFont(fontName: String, size: CGFloat) -> UIFont {
+        if fontName.count <= 0 || fontName == def_fontName{
+            return UIFont(name: def_fontName, size: size)!
+        }
+        if !fontName.contains(".") {
+            return UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+        let stringArray: Array = fontName.components(separatedBy: ".")
+        let path = Bundle.main.path(forResource: stringArray[0], ofType: stringArray[1])
+        let fontData = NSData.init(contentsOfFile: path ?? "")
+        
+        let fontdataProvider = CGDataProvider(data: CFBridgingRetain(fontData) as! CFData)
+        let fontRef = CGFont.init(fontdataProvider!)!
+        
+        var fontError = Unmanaged<CFError>?.init(nilLiteral: ())
+        CTFontManagerRegisterGraphicsFont(fontRef, &fontError)
+        
+        let fontName: String =  fontRef.postScriptName as String? ?? ""
+        
+        let font = UIFont(name: fontName, size: size)
+        
+        return font ?? UIFont(name: def_fontName, size: size)!
+    }
+}
 
 extension DPbsManager {
     func loadJson<T: Codable>(_: T.Type, name: String, type: String = "json") -> T? {

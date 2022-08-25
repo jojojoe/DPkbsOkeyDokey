@@ -113,7 +113,8 @@ extension DPkbsFontBar: UICollectionViewDataSource {
         cell.layer.cornerRadius = 6
         cell.layer.masksToBounds = true
         
-        cell.fontLabel.fontName(16, font)
+        cell.fontLabel.font = DPbsManager.default.customFont(fontName: font, size: 16)
+//        cell.fontLabel.fontName(16, font)
 //        cell.layer.borderWidth = 2
 //        cell.layer.borderColor = UIColor(hexString: "#521009")?.cgColor
         if currentFontStr == font {

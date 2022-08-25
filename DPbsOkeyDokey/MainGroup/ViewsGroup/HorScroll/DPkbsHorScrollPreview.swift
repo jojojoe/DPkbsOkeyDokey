@@ -159,7 +159,7 @@ extension ASTextAutoScrollView {
     func updateContentLabel() {
        
         
-        let font = UIFont(name: sysFontFileName, size: sysFontPointSize) ?? UIFont.systemFont(ofSize: sysFontPointSize)
+        let font = DPbsManager.default.customFont(fontName: sysFontFileName, size: sysFontPointSize) ?? UIFont(name: sysFontFileName, size: sysFontPointSize) ?? UIFont.systemFont(ofSize: sysFontPointSize)
         
         var originalAttri: ASAttributedString = "\(sysString, .font(font), .foreground(sysTextColor), .paragraph(.alignment(.center)))"
         

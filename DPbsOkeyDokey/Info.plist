@@ -4,58 +4,6 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>taobao</string>
-		<string>alipay</string>
-		<string>openapp.jdmobile</string>
-		<string>imeituan</string>
-		<string>iosamap</string>
-		<string>diditaxi</string>
-		<string>youku</string>
-		<string>bilibili</string>
-		<string>tenvideo</string>
-		<string>orpheus</string>
-		<string>qqmusic</string>
-		<string>pinduoduo</string>
-		<string>kwai</string>
-		<string>dingtalk</string>
-		<string>lark</string>
-		<string>feishu</string>
-		<string>wxwork</string>
-		<string>wxworklocal</string>
-		<string>QiChaCha</string>
-		<string>mtxx</string>
-		<string>sinaweibo</string>
-		<string>evernote</string>
-		<string>bdboxiosqrcode</string>
-		<string>tmall</string>
-		<string>qiyi-iphone</string>
-		<string>tim</string>
-		<string>dewuapp</string>
-		<string>momochat</string>
-		<string>mailmaster</string>
-		<string>qqquicklogin</string>
-		<string>aliyunlogin</string>
-		<string>accountLogin27762694</string>
-		<string>KingsoftOfficeApp</string>
-		<string>baiduyun</string>
-		<string>eleme</string>
-		<string>shadowrocket</string>
-		<string>orpheuswidget</string>
-		<string>com.icbc.iphoneclient</string>
-		<string>bankabc</string>
-		<string>wx2654d9155d70a468</string>
-		<string>BaiduIMShop</string>
-		<string>com.sogou.sogouinput</string>
-		<string>iFlytekIME</string>
-		<string>baidutranslate</string>
-		<string>yddict</string>
-		<string>cn.12306</string>
-		<string>a28ft4</string>
-		<string>qqtranslator</string>
-		<string>keep</string>
-	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -63,25 +11,25 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-        <string>Avenir-Black.ttf</string>
-        <string>SignusDigitalSquareNbp-q8Dd.ttf</string>
-        <string>SanstainaRegular-52e8.ttf</string>
-        <string>NbpInformaFivesix-2dXW.ttf</string>
-        <string>dash_pixel-7.ttf</string>
-        <string>Atmosphere-Regular.ttf</string>
-        <string>Unipix.ttf</string>
-        <string>RousseauDeco.ttf</string>
-        <string>Monoton-Regular.ttf</string>
-        <string>PoiretOne-Regular.ttf</string>
-        <string>Fredoka-One.ttf</string>
-        <string>HACKED.ttf</string>
-        <string>DIGITAL-Regular.ttf</string>
-        <string>Creepster-Regular.ttf</string>
-        <string>Comic Sans MS Bold.ttf</string>
-        <string>LuckiestGuy-Regular.ttf</string>
-        <string>Roboto-BoldItalic.ttf</string>
-        <string>RobotoMono-Bold.ttf</string>
-        <string>Montserrat-Bold.ttf</string>
+		<string>Avenir-Black.ttf</string>
+		<string>SignusDigitalSquareNbp-q8Dd.ttf</string>
+		<string>SanstainaRegular-52e8.ttf</string>
+		<string>NbpInformaFivesix-2dXW.ttf</string>
+		<string>dash_pixel-7.ttf</string>
+		<string>Atmosphere-Regular.ttf</string>
+		<string>Unipix.ttf</string>
+		<string>RousseauDeco.ttf</string>
+		<string>Monoton-Regular.ttf</string>
+		<string>PoiretOne-Regular.ttf</string>
+		<string>Fredoka-One.ttf</string>
+		<string>HACKED.ttf</string>
+		<string>DIGITAL-Regular.ttf</string>
+		<string>Creepster-Regular.ttf</string>
+		<string>Comic Sans MS Bold.ttf</string>
+		<string>LuckiestGuy-Regular.ttf</string>
+		<string>Roboto-BoldItalic.ttf</string>
+		<string>RobotoMono-Bold.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
