@@ -138,7 +138,7 @@ extension DPkbsPreviewVC {
     }
     
     @objc func purchaseSuccess(nofi: NotificationCenter) {
-//        ZKProgressHUD.showSuccess("恭喜你成为我们的会员!")
+
     }
 }
 
@@ -266,7 +266,7 @@ extension DPkbsPreviewVC {
         contentTextFeid.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 14)
         toolView.addSubview(contentTextFeid)
         
-        contentTextFeid.placeholder = "内容..."
+        contentTextFeid.placeholder = "Text here...".localized()
         contentTextFeid.clearButtonMode = .whileEditing
         contentTextFeid.snp.makeConstraints {
             $0.centerY.equalToSuperview()

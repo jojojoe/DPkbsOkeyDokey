@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  DPbsOkeyDokey
+
+  Created by JOJO on 2022/8/26.
+  
+*/
+"AppName" = "Rainbow LED";
+
+"TermsofuseURLStr" = "https://jojojoe.github.io/DPkbsOkeyDokeyResource/okeydokeyTerms_en.html";
+
+"PrivacyPolicyURLStr" = "https://jojojoe.github.io/DPkbsOkeyDokeyResource/okeydokeyPrivacy_en.html";
+
+
+"Congratulations, you can use special effects freely!" = "Congratulations, you can use special effects freely!";
+"Text here..." = "Text here...";
+"Dozens of exquisite special effects for unlimited use" = "Dozens of exquisite special effects for unlimited use";
+"Yearly" = "Yearly";
+"Subscription Now" = "Subscription Now";
+"Subscription notice" = "Subscription notice";
+
+
+"给个好评" = "Give us a rating";
+"隐私政策与用户协议" = "Privacy Policy & Terms of Use";
+"联系我们" = "Feedback";
+"版本号" = "Version";
+"请阅读并理解我们的" = "Please read and understand our";
+"用户服务协议" = "Terms of Use";
+"隐私政策" = "Privacy Policy";
+"隐私信息描述" = "When using this APP, it will apply for system permissions, collect device information and crash information, so as to provide you with better services.";
+"确定" = "OK";
+
+
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";

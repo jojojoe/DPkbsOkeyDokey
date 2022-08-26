@@ -97,3 +97,58 @@ extension SceneDelegate {
         UIViewController.attemptRotationToDeviceOrientation()
     }
 }
+
+
+/*
+ 
+ 超赞的打Call表白神器！
+ 让你的手机秒变移动的弹幕LED发射器！
+ 手持手机弹幕LED，在演唱会上让爱豆一眼就能在人群中看到你！
+ 无论是在演唱会，酒吧，生日派对，机场接机，搭讪表白，夜店打Call，只需在手持弹幕中输入文字，举起手机，就能怒刷一波存在感！
+ 
+ 产品特点：
+ -丰富的字体、颜色，让手机弹幕来替你传达爱意吧
+ -滚动LED字幕更炫丽，百变弹幕不重样，十余种背景特效任你挑选
+ -支持英文、中文、日文字体
+ 
+ 应用场景：
+ 1.LED灯牌
+ 2.应援灯牌
+ 3.表白广告
+ 4.夜店打Call
+ 5.机场接人手持广告牌
+ 
+ 
+ 关键词：
+ 灯牌 弹幕 led 嗨弹幕 字幕 应援 显示屏 表白 提词器 投屏 爱追星 滚动字幕 特效 手持弹幕 led显示屏 滚动 打call 演唱会
+ 
+ 关键词：
+ 
+ led lights,led hue,led,led dmx,led ble,led mood light,idol,effect,aura led,ge lights,billboard for iphone,
+ banner,led scroller,placard,concert call,跑馬燈,powerled,弹幕
+ 
+ 
+ */
+
+/*
+ 
+ The awesome call confession artifact!
+  Turn your phone into a mobile barrage LED launcher in seconds!
+  Holding the mobile phone barrage LED, at the concert, idols can see you in the crowd at a glance!
+  Whether it's at a concert, bar, birthday party, airport pick-up, pick up a conversation, or make a call in a nightclub, just enter text in the hand-held barrage, hold up the phone, and you can get a wave of presence!
+  
+  Features:
+  - Rich fonts and colors, let the mobile phone barrage convey love for you
+  - The scrolling LED subtitles are more dazzling, the ever-changing barrage is not repeated, and there are more than ten background effects for you to choose from
+  - Support English, Chinese, Japanese fonts
+  
+  Application scenarios:
+  1. LED lights
+  2. Aid light sign
+  3. Confession advertising
+  4. Call the nightclub
+  5. Pick up people at the airport and hold billboards
+  
+ 
+ */
+

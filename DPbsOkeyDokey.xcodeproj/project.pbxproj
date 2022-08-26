@@ -81,6 +81,8 @@
 		EBD60245280D1BEB001CDF3B /* DPkbsStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */; };
 		EBD6024A280D3D48001CDF3B /* DPbsExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */; };
 		EBD6024C280D3EC6001CDF3B /* StyleTemplateList_color.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD6024B280D3EC6001CDF3B /* StyleTemplateList_color.json */; };
+		EBE16DCB28B877E400D55F9C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBE16DCD28B877E400D55F9C /* Localizable.strings */; };
+		EBE16DCF28B877EC00D55F9C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBE16DD128B877EC00D55F9C /* InfoPlist.strings */; };
 		EBEF484C280FAD91004D368D /* DPkbsEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +167,14 @@
 		EBD60244280D1BEB001CDF3B /* DPkbsStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsStoreVC.swift; sourceTree = "<group>"; };
 		EBD60249280D3D48001CDF3B /* DPbsExtensionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPbsExtensionTool.swift; sourceTree = "<group>"; };
 		EBD6024B280D3EC6001CDF3B /* StyleTemplateList_color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StyleTemplateList_color.json; sourceTree = "<group>"; };
+		EBE16DC328B8774100D55F9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		EBE16DC428B8774600D55F9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		EBE16DC528B8774E00D55F9C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		EBE16DC628B8774E00D55F9C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EBE16DCC28B877E400D55F9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBE16DCE28B877E700D55F9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EBE16DD028B877EC00D55F9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EBE16DD228B877ED00D55F9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EBEF484B280FAD91004D368D /* DPkbsEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPkbsEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -360,6 +370,8 @@
 				EBD60235280D024E001CDF3B /* LaunchScreen.storyboard */,
 				EBD60238280D024E001CDF3B /* Info.plist */,
 				EB98F6EC28A26B1900CD876E /* Configuration.storekit */,
+				EBE16DCD28B877E400D55F9C /* Localizable.strings */,
+				EBE16DD128B877EC00D55F9C /* InfoPlist.strings */,
 			);
 			name = RootGroup;
 			sourceTree = "<group>";
@@ -439,6 +451,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = EBD6021E280D024B001CDF3B;
 			productRefGroup = EBD60228280D024B001CDF3B /* Products */;
@@ -456,6 +470,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D806B1BF28B6644200FE7301 /* 新蒂小丸子小学版.TTF in Resources */,
+				EBE16DCF28B877EC00D55F9C /* InfoPlist.strings in Resources */,
+				EBE16DCB28B877E400D55F9C /* Localizable.strings in Resources */,
 				EB9E1955287C006300332DD3 /* Fredoka-One.ttf in Resources */,
 				D806B1B328B6643B00FE7301 /* suusiki.ttf in Resources */,
 				EB9E194B287C006300332DD3 /* Montserrat-Bold.ttf in Resources */,
@@ -591,6 +607,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				EBD60231280D024B001CDF3B /* Base */,
+				EBE16DC328B8774100D55F9C /* zh-Hans */,
+				EBE16DC528B8774E00D55F9C /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -599,8 +617,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				EBD60236280D024E001CDF3B /* Base */,
+				EBE16DC428B8774600D55F9C /* zh-Hans */,
+				EBE16DC628B8774E00D55F9C /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EBE16DCD28B877E400D55F9C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBE16DCC28B877E400D55F9C /* en */,
+				EBE16DCE28B877E700D55F9C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		EBE16DD128B877EC00D55F9C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBE16DD028B877EC00D55F9C /* en */,
+				EBE16DD228B877ED00D55F9C /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -610,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -671,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -733,7 +773,7 @@
 				DEVELOPMENT_TEAM = 97Y24FFSPP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DPbsOkeyDokey/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OkeyDokey;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rainbow Lights";
 				INFOPLIST_KEY_NSCameraUsageDescription = "App needs your camera permission to take photo and edit it shape, mask, cut it, add stickers, text and other effect.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "App needs your photo gallery permission to choose photo, and apply the shape editor, video cut, sticker, text and other effect.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs your photo gallery permission to choose and save photo, and apply the shape editor, video cut, sticker, textand other effect.";
@@ -772,7 +812,7 @@
 				DEVELOPMENT_TEAM = 97Y24FFSPP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DPbsOkeyDokey/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OkeyDokey;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rainbow Lights";
 				INFOPLIST_KEY_NSCameraUsageDescription = "App needs your camera permission to take photo and edit it shape, mask, cut it, add stickers, text and other effect.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "App needs your photo gallery permission to choose photo, and apply the shape editor, video cut, sticker, text and other effect.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs your photo gallery permission to choose and save photo, and apply the shape editor, video cut, sticker, textand other effect.";

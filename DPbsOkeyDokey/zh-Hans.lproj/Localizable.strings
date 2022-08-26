@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  DPbsOkeyDokey
+
+  Created by JOJO on 2022/8/26.
+  
+*/
+
+"AppName" = "彩虹弹幕";
+
+"TermsofuseURLStr" = "https://jojojoe.github.io/DPkbsOkeyDokeyResource/okeydokeyTerms_zh.html";
+
+"PrivacyPolicyURLStr" = "https://jojojoe.github.io/DPkbsOkeyDokeyResource/okeydokeyPrivacy_zh.html";
+
+
+
+"Congratulations, you can use special effects freely!" = "恭喜,您已成为我们的会员,可以随意使用特效!";
+"Text here..." = "输入内容...";
+"Dozens of exquisite special effects for unlimited use" = "数十套精美特效无限使用";
+"Yearly" = "年订阅";
+"Subscription Now" = "立即加入";
+"Subscription notice" = "订阅须知";
+
+
+"给个好评" = "给个好评";
+"隐私政策与用户协议" = "隐私政策与用户协议";
+"联系我们" = "联系我们";
+"版本号" = "版本号";
+"请阅读并理解我们的" = "请阅读并理解我们的";
+"用户服务协议" = "用户服务协议";
+"隐私政策" = "隐私政策";
+"隐私信息描述" = "隐私信息描述";
+"确定" = "确定";
+
+
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";

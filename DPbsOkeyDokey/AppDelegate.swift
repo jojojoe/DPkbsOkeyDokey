@@ -13,17 +13,11 @@ import TPInAppReceipt
 import StoreKit
 
 // 添加中文和日文字体 多国文字校对
-
+// https://jojojoe.github.io/DPkbsOkeyDokeyResource/okeydokeyPrivacy_en.html
 // 描述 关键字 配置链接 宣传图 后台填充
 //
 // com.xx.test.888888
-let AppName: String = "InstaMate"
-let purchaseUrl = ""
-let TermsofuseURLStr = "http://plausible-visitor.surge.sh/Terms_of_use.html"
-let PrivacyPolicyURLStr = "http://likeable-lip.surge.sh/Facial_Privacy_Policy.html"
 
-let feedbackEmail: String = "missyoumickey009@gmail.com"
-let AppAppStoreID: String = "1619053569"
  
 
 

@@ -51,9 +51,9 @@ extension DPkbsStoreVC {
         
         //
         let vipInfo1 = UILabel()
-        vipInfo1.fontName(14, "AppleSDGothicNeo-Bold")
+        vipInfo1.fontName(18, "AppleSDGothicNeo-Bold")
             .color(.white)
-            .text("\("数十套精美特效无限使用".localized())")
+            .text("\("Dozens of exquisite special effects for unlimited use".localized())")
             .textAlignment(.center)
             .adhere(toSuperview: contentV)
             
@@ -68,7 +68,7 @@ extension DPkbsStoreVC {
         let contentInfoLabel = UILabel()
         contentInfoLabel.fontName(15, "AppleSDGothicNeo-Bold")
             .color(.white)
-            .text("年会员".localized())
+            .text("Yearly".localized())
             .adhere(toSuperview: contentV)
         contentInfoLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview().offset(-40)
@@ -82,7 +82,7 @@ extension DPkbsStoreVC {
 //            .backgroundColor(UIColor(hexString: "#FECB42")!)
 //        priceLabelBgV.layer.cornerRadius = 8
         //
-        let priceStr = "$1.99"
+        let priceStr = "$0.99"
         priceLabel.fontName(15, "Avenir-HeavyOblique")
             .color(UIColor(hexString: "#FECB42")!)
             .text(priceStr)
@@ -103,8 +103,8 @@ extension DPkbsStoreVC {
         vipInfo.font(18, "AppleSDGothicNeo-Bold")
             .titleColor(.white)
             .adhere(toSuperview: contentV)
-            .title("\("  ")\("立即加入".localized())\(" ")")
-            .image(UIImage(named: "appicon"))
+            .title("\(" ")\("Subscription Now".localized())\("")")
+            .image(UIImage(named: "vippro"))
             .backgroundColor(UIColor(hexString: "#FECB42")!)
         vipInfo.layer.cornerRadius = 20
         vipInfo.snp.makeConstraints {
@@ -126,14 +126,18 @@ extension DPkbsStoreVC {
         }
         purchaseInfoUrlBtn.addTarget(self, action: #selector(purchaseInfoUrlBtnClick(sender: )), for: .touchUpInside)
         //
-        let attri = NSAttributedString(string: "Purchase Info", attributes: [NSAttributedString.Key.font : UIFont(name: "AvenirNext-MediumItalic", size: 13)!, NSAttributedString.Key.foregroundColor : UIColor(hexString: "#E5FF7E")!, NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor : UIColor(hexString: "#E5FF7E")!])
+        let attri = NSAttributedString(string: "Subscription notice".localized(), attributes: [NSAttributedString.Key.font : UIFont(name: "AvenirNext-MediumItalic", size: 13)!, NSAttributedString.Key.foregroundColor : UIColor(hexString: "#E5FF7E")!, NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor : UIColor(hexString: "#E5FF7E")!])
         purchaseInfoUrlBtn.setAttributedTitle(attri, for: .normal)
         
         
     }
     
     @objc func purchaseInfoUrlBtnClick(sender: UIButton) {
+        
         debugPrint("info link")
+        if let url = URL(string: DPbsManager.default.SubscribeInfoURLStr) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @objc func vipPurchaseClick(sender: UIButton) {
@@ -142,7 +146,7 @@ extension DPkbsStoreVC {
             [weak self] in
             guard let `self` = self else {return}
             DispatchQueue.main.async {
-                ZKProgressHUD.showSuccess("恭喜你成为我们的会员!")
+                ZKProgressHUD.showSuccess("Congratulations, you can use special effects freely!".localized())
                 self.view.isHidden = true
             }
         }

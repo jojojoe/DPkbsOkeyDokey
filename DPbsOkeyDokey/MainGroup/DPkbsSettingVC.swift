@@ -162,7 +162,7 @@ class DPkbsSettingVC: UIViewController {
     @objc func appShareBtnClick(sender: UIButton) {
         //
         
-        let itunesStr = "itms-apps://itunes.apple.com/app/id\(AppAppStoreID)"
+        let itunesStr = "itms-apps://itunes.apple.com/app/id\(DPbsManager.default.AppStoreID)"
         if let url = URL(string: itunesStr) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
@@ -179,13 +179,13 @@ class DPkbsSettingVC: UIViewController {
     }
     
     func showPrivatePage() {
-        if let url = URL(string: PrivacyPolicyURLStr.localized()) {
+        if let url = URL(string: DPbsManager.default.PrivacyURLStr.localized()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     func showTermsofusePage() {
-        if let url = URL(string: TermsofuseURLStr.localized()) {
+        if let url = URL(string: DPbsManager.default.TermsURLStr.localized()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
@@ -204,7 +204,8 @@ extension DPkbsSettingVC: MFMailComposeViewControllerDelegate {
           // 获取App的版本号
           let appVersion = infoDic?["CFBundleShortVersionString"] ?? "8.8.8"
           // 获取App的名称
-          let appName = "\(AppName)"
+          
+          let appName = "\(DPbsManager.default.AppName)".localized()
 
           
           let controller = MFMailComposeViewController()
@@ -214,7 +215,8 @@ extension DPkbsSettingVC: MFMailComposeViewControllerDelegate {
           controller.setSubject("")
           //设置收件人
           // FIXME: feed back email
-          controller.setToRecipients([feedbackEmail])
+          
+          controller.setToRecipients([DPbsManager.default.feedbackEmail])
           //设置邮件正文内容（支持html）
        controller.setMessageBody("\n\n\nSystem Version：\(systemVersion)\n Device Name：\(modelName)\n App Name：\(appName)\n App Version：\(appVersion )", isHTML: false)
           

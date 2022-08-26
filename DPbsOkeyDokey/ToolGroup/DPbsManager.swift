@@ -85,6 +85,17 @@ struct YAColorItem: Codable {
 class DPbsManager: NSObject {
     static let `default` = DPbsManager()
     
+    let AppName: String = "AppName"
+    let purchaseUrl = ""
+    let TermsURLStr = "http://plausible-visitor.surge.sh/Terms_of_use.html"
+    let PrivacyURLStr = "http://likeable-lip.surge.sh/Facial_Privacy_Policy.html"
+    let SubscribeInfoURLStr = "http://likeable-lip.surge.sh/Facial_Privacy_Policy.html"
+    let feedbackEmail: String = "superegg_picspace@163.com"
+    let AppStoreID: String = "1619053569"
+    
+    
+    
+    
     var styleList_color: [ODStyleItem] {
         return DPbsManager.default.loadJson([ODStyleItem].self, name: "StyleTemplateList_color") ?? []
     }
